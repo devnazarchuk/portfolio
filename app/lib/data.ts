@@ -1,6 +1,7 @@
 export const projectsData = [
     {
         id: 1,
+        key: 'depity' as const,
         title: 'Depity Team Onboarding & Task Management',
         description: [
             'A web platform for team onboarding, task assignment, progress tracking, and file management',
@@ -13,18 +14,7 @@ export const projectsData = [
     },
     {
         id: 2,
-        title: 'Pappert Bakery Website',
-        description: [
-            'Rebuilt site with Next.js, Tailwind CSS, and Framer Motion',
-            'Optimized Core Web Vitals and accessibility',
-            'Implemented role-based content and multilingual support'
-        ],
-        technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'i18n'],
-        github: 'https://github.com/devnazarchuk/bakery-website',
-        live: 'https://pappert-bakery.vercel.app'
-    },
-    {
-        id: 3,
+        key: 'taskManager' as const,
         title: 'Task Management App',
         description: [
             'Features urgency sorting, Pomodoro timer, analytics',
@@ -32,10 +22,11 @@ export const projectsData = [
         ],
         technologies: ['React', 'Zustand', 'Tailwind CSS'],
         github: 'https://github.com/devnazarchuk/task-manager',
-        live: 'https://devnazarchuk.vercel.app'
+        live: 'https://task-manager-nazarchuk.vercel.app'
     },
     {
-        id: 4,
+        id: 3,
+        key: 'datingApp' as const,
         title: 'Dating App Prototype',
         description: [
             'Real-time chat with voice/video',
@@ -43,34 +34,23 @@ export const projectsData = [
         ],
         technologies: ['Next.js', 'WebRTC', 'Socket.io'],
         github: 'https://github.com/devnazarchuk/dating-app',
-        live: 'https://devnazarchuk.vercel.app'
+        live: 'https://dating-app-nazarchuk.vercel.app'
     }
 ];
 
 export const experienceData = [
     {
         id: 1,
-        title: 'Frontend Developer Intern',
-        company: 'Depity',
-        period: 'Dec 2022 – Sep 2023',
-        description: [
-            'Developed and optimized React and Next.js apps with Tailwind CSS',
-            'Improved performance by implementing lazy loading and code splitting',
-            'Ensured accessibility and multilingual support (ARIA, next-intl)',
-            'Worked in Agile teams with code reviews and continuous integration'
-        ]
+        key: 'depity' as const,
+        company: 'Depity GmbH',
+        position: 'Frontend Developer',
+        period: '2022 - 2023'
     },
     {
         id: 2,
-        title: 'Freelance Developer',
-        company: 'Self-employed',
-        period: 'Jul 2022 – Present',
-        description: [
-            'Created production-ready applications such as:',
-            'Task Manager with Pomodoro timer and analytics',
-            'Real-time Dating App with voice/video chat',
-            'Bakery Website with role-based content and SEO optimization',
-            'Language learning platform for children'
-        ]
+        key: 'freelance' as const,
+        company: 'Freelance',
+        position: 'Frontend Developer',
+        period: '2022 - Present'
     }
 ];

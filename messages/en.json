@@ -1,0 +1,94 @@
+{
+    "title": "Artem Nazarchuk",
+    "subtitle": "Frontend Developer",
+    "description": "I build fast, scalable, and accessible web applications using React, Next.js, and TypeScript. Passionate about clean code, user-centric design, and continuous learning.",
+    "nav": {
+        "about": "about",
+        "experience": "experience",
+        "projects": "projects",
+        "contact": "contact"
+    },
+    "about": {
+        "title": "About me",
+        "paragraph1": "Since 2022, I have been deeply engaged in frontend development, starting from HTML and CSS fundamentals and advancing to modern JavaScript frameworks. I enjoy solving complex UI challenges and optimizing performance and accessibility.",
+        "paragraph2": "Currently, I am a Computer Science student and a freelance developer, working on real-world projects that emphasize scalability, reusability, and multilingual support. I aim to collaborate on impactful projects and grow as a developer.",
+        "downloadResume": "Download Resume"
+    },
+    "experience": {
+        "title": "Experience",
+        "items": {
+            "depity": {
+                "title": "Frontend Developer Intern",
+                "company": "Depity",
+                "period": "Dec 2022 – Sep 2023",
+                "description": [
+                    "Developed and optimized React and Next.js apps with Tailwind CSS",
+                    "Improved performance by implementing lazy loading and code splitting",
+                    "Ensured accessibility and multilingual support (ARIA, next-intl)",
+                    "Worked in Agile teams with code reviews and continuous integration"
+                ]
+            },
+            "freelance": {
+                "title": "Freelance Developer",
+                "company": "Self-employed",
+                "period": "Jul 2022 – Present",
+                "description": [
+                    "Created production-ready applications such as:",
+                    "Task Manager with Pomodoro timer and analytics",
+                    "Real-time Dating App with voice/video chat",
+                    "Bakery Website with role-based content and SEO optimization",
+                    "Language learning platform for children"
+                ]
+            }
+        }
+    },
+    "projects": {
+        "title": "Projects",
+        "more": "More of my projects",
+        "items": {
+            "depity": {
+                "title": "Depity Team Onboarding & Task Management",
+                "description": [
+                    "A web platform for team onboarding, task assignment, progress tracking, and file management",
+                    "Designed to streamline team collaboration and improve workflow efficiency",
+                    "Built with React and modern state management"
+                ],
+                "technologies": ["React", "State Management", "Responsive Design"]
+            },
+            "taskManager": {
+                "title": "Task Manager with Pomodoro",
+                "description": [
+                    "Productivity app with task management and Pomodoro timer",
+                    "Features analytics and progress tracking",
+                    "Built with React and Firebase"
+                ],
+                "technologies": ["React", "Firebase", "Analytics"]
+            },
+            "datingApp": {
+                "title": "Real-time Dating App",
+                "description": [
+                    "Dating platform with real-time chat and video calls",
+                    "Features user matching and profile management",
+                    "Built with React and WebRTC"
+                ],
+                "technologies": ["React", "WebRTC", "Real-time"]
+            }
+        }
+    },
+    "contact": {
+        "title": "Contact Me",
+        "subtitle": "Feel free to reach out for collaborations or questions! 📩",
+        "form": {
+            "name": "Name",
+            "namePlaceholder": "John Doe",
+            "email": "Email",
+            "emailPlaceholder": "john@example.com",
+            "subject": "Subject",
+            "subjectPlaceholder": "Project Collaboration",
+            "message": "Message",
+            "messagePlaceholder": "Hello! I would like to discuss...",
+            "send": "Send Message 🚀",
+            "sending": "Sending..."
+        }
+    }
+} 

@@ -3,6 +3,14 @@
 import { useState, FormEvent, ChangeEvent, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
+import enMessages from '../../messages/en.json';
+import deMessages from '../../messages/de.json';
+
+const messages = {
+    en: enMessages,
+    de: deMessages
+};
 
 interface FormData {
     name: string;
@@ -16,6 +24,8 @@ interface ContactFormProps {
 }
 
 export const ContactForm = ({ className = '' }: ContactFormProps) => {
+    const { language } = useLanguage();
+    const t = messages[language].contact;
     const [formData, setFormData] = useState<FormData>({
         name: '',
         email: '',
@@ -42,28 +52,28 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
         if (!formData.name.trim()) {
             setStatus({
                 type: 'error',
-                message: 'Please enter your name.'
+                message: language === 'en' ? 'Please enter your name.' : 'Bitte geben Sie Ihren Namen ein.'
             });
             return false;
         }
         if (!formData.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
             setStatus({
                 type: 'error',
-                message: 'Please enter a valid email address.'
+                message: language === 'en' ? 'Please enter a valid email address.' : 'Bitte geben Sie eine gültige E-Mail-Adresse ein.'
             });
             return false;
         }
         if (!formData.title.trim()) {
             setStatus({
                 type: 'error',
-                message: 'Please enter a subject.'
+                message: language === 'en' ? 'Please enter a subject.' : 'Bitte geben Sie einen Betreff ein.'
             });
             return false;
         }
         if (!formData.message.trim() || formData.message.length < 10) {
             setStatus({
                 type: 'error',
-                message: 'Please enter a message (minimum 10 characters).'
+                message: language === 'en' ? 'Please enter a message (minimum 10 characters).' : 'Bitte geben Sie eine Nachricht ein (mindestens 10 Zeichen).'
             });
             return false;
         }
@@ -104,7 +114,9 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
             console.error('Missing EmailJS configuration');
             setStatus({
                 type: 'error',
-                message: 'Email service configuration is missing. Please contact the administrator.'
+                message: language === 'en' 
+                    ? 'Email service configuration is missing. Please contact the administrator.'
+                    : 'E-Mail-Service-Konfiguration fehlt. Bitte kontaktieren Sie den Administrator.'
             });
             setIsLoading(false);
             return;
@@ -132,7 +144,9 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
 
             setStatus({
                 type: 'success',
-                message: 'Your message has been sent successfully. I will get back to you soon!'
+                message: language === 'en'
+                    ? 'Your message has been sent successfully. I will get back to you soon!'
+                    : 'Ihre Nachricht wurde erfolgreich gesendet. Ich werde mich bald bei Ihnen melden!'
             });
             setFormData({ name: '', email: '', title: '', message: '' });
         } catch (error) {
@@ -145,7 +159,9 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
 
             setStatus({
                 type: 'error',
-                message: 'There was an error sending the message. Please try again later or contact me directly at devnazarchuk@gmail.com'
+                message: language === 'en'
+                    ? 'There was an error sending the message. Please try again later or contact me directly at devnazarchuk@gmail.com'
+                    : 'Beim Senden der Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder kontaktieren Sie mich direkt unter devnazarchuk@gmail.com'
             });
         } finally {
             setIsLoading(false);
@@ -158,13 +174,13 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             onSubmit={handleSubmit}
-            className={`w-full max-w-lg bg-fuchsia-800/50 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-slate-700 ${className}`}
+            className={`w-full max-w-lg bg-card-bg p-6 rounded-lg shadow-lg ${className}`}
             noValidate
         >
             <div className='flex flex-col gap-4'>
                 <div>
-                    <label htmlFor='name' className='block text-slate-200 mb-2'>
-                        Name
+                    <label htmlFor='name' className='block text-text-primary mb-2'>
+                        {t.form.name}
                     </label>
                     <input
                         type='text'
@@ -173,15 +189,15 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className='w-full p-3 bg-fuchsia-700 text-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-teal-400'
-                        aria-label='Your name'
-                        placeholder='John Doe'
+                        className='w-full p-3 bg-background text-text-primary rounded-lg outline-none focus:ring-2 focus:ring-accent'
+                        aria-label={t.form.name}
+                        placeholder={t.form.namePlaceholder}
                     />
                 </div>
 
                 <div>
-                    <label htmlFor='email' className='block text-slate-200 mb-2'>
-                        Email
+                    <label htmlFor='email' className='block text-text-primary mb-2'>
+                        {t.form.email}
                     </label>
                     <input
                         type='email'
@@ -190,15 +206,15 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className='w-full p-3 bg-fuchsia-700 text-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-teal-400'
-                        aria-label='Your email address'
-                        placeholder='john@example.com'
+                        className='w-full p-3 bg-background text-text-primary rounded-lg outline-none focus:ring-2 focus:ring-accent'
+                        aria-label={t.form.email}
+                        placeholder={t.form.emailPlaceholder}
                     />
                 </div>
 
                 <div>
-                    <label htmlFor='title' className='block text-slate-200 mb-2'>
-                        Subject
+                    <label htmlFor='title' className='block text-text-primary mb-2'>
+                        {t.form.subject}
                     </label>
                     <input
                         type='text'
@@ -207,15 +223,15 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
                         value={formData.title}
                         onChange={handleChange}
                         required
-                        className='w-full p-3 bg-fuchsia-700 text-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-teal-400'
-                        aria-label='Message subject'
-                        placeholder='Project Collaboration'
+                        className='w-full p-3 bg-background text-text-primary rounded-lg outline-none focus:ring-2 focus:ring-accent'
+                        aria-label={t.form.subject}
+                        placeholder={t.form.subjectPlaceholder}
                     />
                 </div>
 
                 <div>
-                    <label htmlFor='message' className='block text-slate-200 mb-2'>
-                        Message
+                    <label htmlFor='message' className='block text-text-primary mb-2'>
+                        {t.form.message}
                     </label>
                     <textarea
                         id='message'
@@ -224,19 +240,19 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
                         onChange={handleChange}
                         required
                         rows={5}
-                        className='w-full p-3 bg-fuchsia-700 text-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-teal-400'
-                        aria-label='Your message'
-                        placeholder='Hello! I would like to discuss...'
+                        className='w-full p-3 bg-background text-text-primary rounded-lg outline-none focus:ring-2 focus:ring-accent'
+                        aria-label={t.form.message}
+                        placeholder={t.form.messagePlaceholder}
                     />
                 </div>
 
                 <button
                     type='submit'
                     disabled={isLoading}
-                    className={`mt-4 bg-fuchsia-500 hover:bg-fuchsia-600 text-white font-semibold py-2 px-4 rounded-lg transition-all ${
+                    className={`mt-4 bg-accent hover:bg-accent-hover text-white font-semibold py-2 px-4 rounded-lg transition-all ${
                         isLoading ? 'opacity-50 cursor-not-allowed' : ''
                     }`}
-                    aria-label={isLoading ? 'Sending message...' : 'Send message'}
+                    aria-label={isLoading ? t.form.sending : t.form.send}
                 >
                     {isLoading ? (
                         <span className='flex items-center justify-center'>
@@ -260,10 +276,10 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
                                     d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
                                 />
                             </svg>
-                            Sending...
+                            {t.form.sending}
                         </span>
                     ) : (
-                        'Send Message 🚀'
+                        t.form.send
                     )}
                 </button>
 
@@ -271,8 +287,8 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
                     <div
                         className={`mt-4 p-4 rounded-lg ${
                             status.type === 'success'
-                                ? 'bg-green-500/20 text-green-400'
-                                : 'bg-red-500/20 text-red-400'
+                                ? 'bg-green-500/20 text-green-600 dark:text-green-400'
+                                : 'bg-red-500/20 text-red-600 dark:text-red-400'
                         }`}
                         role='alert'
                     >

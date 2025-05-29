@@ -1,0 +1,94 @@
+{
+    "title": "Artem Nazarchuk",
+    "subtitle": "Frontend Entwickler",
+    "description": "Ich entwickle schnelle, skalierbare und zugängliche Webanwendungen mit React, Next.js und TypeScript. Leidenschaftlich für sauberen Code, nutzerzentriertes Design und kontinuierliches Lernen.",
+    "nav": {
+        "about": "über mich",
+        "experience": "erfahrung",
+        "projects": "projekte",
+        "contact": "kontakt"
+    },
+    "about": {
+        "title": "Über mich",
+        "paragraph1": "Seit 2022 bin ich intensiv in der Frontend-Entwicklung tätig, beginnend mit HTML- und CSS-Grundlagen bis hin zu modernen JavaScript-Frameworks. Ich genieße es, komplexe UI-Herausforderungen zu lösen und Performance sowie Zugänglichkeit zu optimieren.",
+        "paragraph2": "Aktuell bin ich Informatikstudent und freiberuflicher Entwickler und arbeite an realen Projekten, die Skalierbarkeit, Wiederverwendbarkeit und mehrsprachige Unterstützung betonen. Ich strebe danach, an wirkungsvollen Projekten mitzuarbeiten und mich als Entwickler weiterzuentwickeln.",
+        "downloadResume": "Lebenslauf herunterladen"
+    },
+    "experience": {
+        "title": "Erfahrung",
+        "items": {
+            "depity": {
+                "title": "Frontend Entwickler Praktikant",
+                "company": "Depity",
+                "period": "Dez 2022 – Sep 2023",
+                "description": [
+                    "Entwicklung und Optimierung von React und Next.js Apps mit Tailwind CSS",
+                    "Verbesserung der Performance durch Lazy Loading und Code Splitting",
+                    "Sicherstellung von Barrierefreiheit und mehrsprachiger Unterstützung (ARIA, next-intl)",
+                    "Arbeit in agilen Teams mit Code Reviews und kontinuierlicher Integration"
+                ]
+            },
+            "freelance": {
+                "title": "Freiberuflicher Entwickler",
+                "company": "Selbstständig",
+                "period": "Jul 2022 – Heute",
+                "description": [
+                    "Entwicklung produktionsreifer Anwendungen wie:",
+                    "Aufgabenmanager mit Pomodoro-Timer und Analysen",
+                    "Echtzeit-Dating-App mit Sprach-/Video-Chat",
+                    "Bäckerei-Website mit rollenbasierter Inhaltsverwaltung und SEO-Optimierung",
+                    "Sprachlernplattform für Kinder"
+                ]
+            }
+        }
+    },
+    "projects": {
+        "title": "Projekte",
+        "more": "Mehr meiner Projekte",
+        "items": {
+            "depity": {
+                "title": "Depity Team Onboarding & Aufgabenverwaltung",
+                "description": [
+                    "Eine Webplattform für Team-Onboarding, Aufgabenvergabe, Fortschrittsverfolgung und Dateiverwaltung",
+                    "Entwickelt zur Optimierung der Teamzusammenarbeit und Verbesserung des Workflows",
+                    "Gebaut mit React und modernem State Management"
+                ],
+                "technologies": ["React", "State Management", "Responsive Design"]
+            },
+            "taskManager": {
+                "title": "Aufgabenmanager mit Pomodoro",
+                "description": [
+                    "Produktivitäts-App mit Aufgabenverwaltung und Pomodoro-Timer",
+                    "Funktionen für Analysen und Fortschrittsverfolgung",
+                    "Gebaut mit React und Firebase"
+                ],
+                "technologies": ["React", "Firebase", "Analytics"]
+            },
+            "datingApp": {
+                "title": "Echtzeit-Dating-App",
+                "description": [
+                    "Dating-Plattform mit Echtzeit-Chat und Videoanrufen",
+                    "Funktionen für Benutzer-Matching und Profilverwaltung",
+                    "Gebaut mit React und WebRTC"
+                ],
+                "technologies": ["React", "WebRTC", "Echtzeit"]
+            }
+        }
+    },
+    "contact": {
+        "title": "Kontakt",
+        "subtitle": "Kontaktieren Sie mich gerne für Zusammenarbeiten oder Fragen! 📩",
+        "form": {
+            "name": "Name",
+            "namePlaceholder": "Max Mustermann",
+            "email": "E-Mail",
+            "emailPlaceholder": "max@beispiel.de",
+            "subject": "Betreff",
+            "subjectPlaceholder": "Projektzusammenarbeit",
+            "message": "Nachricht",
+            "messagePlaceholder": "Hallo! Ich möchte gerne besprechen...",
+            "send": "Nachricht senden 🚀",
+            "sending": "Wird gesendet..."
+        }
+    }
+} 

@@ -1,18 +1,27 @@
 import type { Config } from 'tailwindcss';
 
-export default {
+const config: Config = {
     content: [
         './pages/**/*.{js,ts,jsx,tsx,mdx}',
         './components/**/*.{js,ts,jsx,tsx,mdx}',
-        './app/**/*.{js,ts,jsx,tsx,mdx}',
+        './app/**/*.{js,ts,jsx,tsx,mdx}'
     ],
+    darkMode: 'class',
     theme: {
         extend: {
             colors: {
                 background: 'var(--background)',
-                foreground: 'var(--foreground)',
-            },
-        },
+                'text-primary': 'var(--text-primary)',
+                'text-secondary': 'var(--text-secondary)',
+                accent: 'var(--accent)',
+                'accent-hover': 'var(--accent-hover)',
+                card: 'var(--card)',
+                'card-bg': 'var(--card-bg)',
+                muted: 'var(--muted)'
+            }
+        }
     },
-    plugins: [],
-} satisfies Config;
+    plugins: []
+};
+
+export default config;
