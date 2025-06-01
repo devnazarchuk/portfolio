@@ -41,13 +41,13 @@ export function ProjectCard({ itemKey, github, live }: ProjectCardProps) {
             <div className='flex flex-wrap gap-2 pt-4'>
                 {t.technologies.map((tech: string, index: number) => (
                     <span
-                        key={index}
-                        className='bg-[#723bf3]/20 dark:bg-[#723bf3]/30 text-[#723bf3] px-4 py-1.5 rounded-full text-sm font-medium hover:bg-[#723bf3]/30 dark:hover:bg-[#723bf3]/40 transition-colors duration-200 break-words'
-                    >
+                            key={index}
+                        className='bg-[#723bf3]/20 dark:bg-[#723bf3]/30 text-[#723bf3] dark:text-white px-4 py-1.5 rounded-full text-sm font-medium hover:bg-[#723bf3]/30 dark:hover:bg-[#723bf3]/40 transition-colors duration-200 break-words'
+                        >
                         {tech}
                     </span>
-                ))}
-            </div>
+                    ))}
+                </div>
             <div className='flex gap-4 pt-6'>
                 <Link
                     href={github}

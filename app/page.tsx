@@ -281,7 +281,7 @@ export default function Home() {
                                 company={experience.company}
                                 period={experience.period}
                             />
-                        ))}
+                    ))}
                     </div>
                 </motion.div>
                 <motion.div

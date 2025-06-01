@@ -48,8 +48,8 @@ export function ExperienceCard({ itemKey, company, period }: ExperienceCardProps
             <ul className='text-slate-600 dark:text-slate-200 text-md pt-4 list-disc list-inside space-y-2'>
                 {t.description.map((item: string, index: number) => (
                     <li key={index} className='hover:text-slate-800 dark:hover:text-slate-50 transition-colors duration-200 break-words'>{item}</li>
-                ))}
-            </ul>
+                    ))}
+                </ul>
         </motion.div>
     );
 }

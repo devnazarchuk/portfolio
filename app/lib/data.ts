@@ -42,7 +42,7 @@ export const experienceData = [
     {
         id: 1,
         key: 'depity' as const,
-        company: 'Depity GmbH',
+        company: 'Depity — Personal MVP / Simulated Internship',
         position: 'Frontend Developer',
         period: '2022 - 2023'
     },

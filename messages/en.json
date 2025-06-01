@@ -19,25 +19,30 @@
         "items": {
             "depity": {
                 "title": "Frontend Developer Intern",
-                "company": "Depity",
+                "company": "Depity — Personal MVP / Simulated Internship",
                 "period": "Dec 2022 – Sep 2023",
                 "description": [
-                    "Developed and optimized React and Next.js apps with Tailwind CSS",
-                    "Improved performance by implementing lazy loading and code splitting",
-                    "Ensured accessibility and multilingual support (ARIA, next-intl)",
-                    "Worked in Agile teams with code reviews and continuous integration"
+                    "Developed and deployed a full MVP HR platform for onboarding and role-based access control",
+                    "Built reusable, mobile-first UIs using React.js, Next.js (App Router), Tailwind CSS",
+                    "Implemented ARIA-based accessibility, dark/light theme switcher, and multilingual support (next-intl)",
+                    "Boosted performance using lazy loading, code splitting, and optimized image handling",
+                    "Simulated Agile workflows: standups, sprints, PR reviews, and retrospectives",
+                    "Deployed to Vercel with routing, state management, and production-level UX"
                 ]
             },
             "freelance": {
-                "title": "Freelance Developer",
-                "company": "Self-employed",
+                "title": "Web Developer",
+                "company": "Freelancer & Indie Developer",
                 "period": "Jul 2022 – Present",
                 "description": [
-                    "Created production-ready applications such as:",
-                    "Task Manager with Pomodoro timer and analytics",
-                    "Real-time Dating App with voice/video chat",
-                    "Bakery Website with role-based content and SEO optimization",
-                    "Language learning platform for children"
+                    "Built and deployed full-stack applications using React.js, Next.js, Tailwind CSS, Zustand, and Vercel",
+                    "Delivered responsive, performant, and accessible interfaces with scalable architecture",
+                    "Key projects include:",
+                    "• Bakery Website Clone – multilingual MVP with RBAC and animation",
+                    "• Sneaker Store (beta stage) – e-commerce with CMS, cart, filters, Stripe",
+                    "• Task Manager App (in development) – with Pomodoro timer, urgency filters, and analytics",
+                    "• Banking App (mobile prototype) – Monobank-style UI with React Native, Firebase, and Tailwind (auth, stories, gradients, date formatting)",
+                    "• Kids' Language Platform (planned) – gamified lessons for German"
                 ]
             }
         }

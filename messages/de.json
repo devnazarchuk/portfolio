@@ -15,29 +15,34 @@
         "downloadResume": "Lebenslauf herunterladen"
     },
     "experience": {
-        "title": "Erfahrung",
+        "title": "Berufserfahrung",
         "items": {
             "depity": {
-                "title": "Frontend Entwickler Praktikant",
-                "company": "Depity",
+                "title": "Frontend-Praktikant (Eigeninitiiertes Projekt)",
+                "company": "Depity — Persönliches MVP / Simuliertes Praktikum",
                 "period": "Dez 2022 – Sep 2023",
                 "description": [
-                    "Entwicklung und Optimierung von React und Next.js Apps mit Tailwind CSS",
-                    "Verbesserung der Performance durch Lazy Loading und Code Splitting",
-                    "Sicherstellung von Barrierefreiheit und mehrsprachiger Unterstützung (ARIA, next-intl)",
-                    "Arbeit in agilen Teams mit Code Reviews und kontinuierlicher Integration"
+                    "Entwicklung und Deployment eines MVPs für eine HR-Plattform mit Fokus auf Onboarding und rollenbasierter Zugriffskontrolle",
+                    "Erstellung von wiederverwendbaren, mobilen Benutzeroberflächen mit React.js, Next.js (App Router) und Tailwind CSS",
+                    "Integration von ARIA-Standards, Mehrsprachigkeit (next-intl) und Dark-/Light-Modus",
+                    "Performance-Optimierung durch Lazy Loading, Code Splitting und Bildkomprimierung",
+                    "Simulation agiler Arbeitsmethoden: Daily Standups, Sprints, Code Reviews, Retrospektiven",
+                    "Deployment auf Vercel mit produktionsreifer Routing- und State-Architektur"
                 ]
             },
             "freelance": {
-                "title": "Freiberuflicher Entwickler",
-                "company": "Selbstständig",
+                "title": "Webentwickler",
+                "company": "Freelancer & Indie Developer",
                 "period": "Jul 2022 – Heute",
                 "description": [
-                    "Entwicklung produktionsreifer Anwendungen wie:",
-                    "Aufgabenmanager mit Pomodoro-Timer und Analysen",
-                    "Echtzeit-Dating-App mit Sprach-/Video-Chat",
-                    "Bäckerei-Website mit rollenbasierter Inhaltsverwaltung und SEO-Optimierung",
-                    "Sprachlernplattform für Kinder"
+                    "Entwicklung und Deployment von Full-Stack-Webanwendungen mit React.js, Next.js, Tailwind CSS, Zustand und Vercel",
+                    "Umsetzung responsiver, performanter und barrierefreier Interfaces mit skalierbarer Architektur",
+                    "Wichtige Projekte:",
+                    "• Bäckerei-Website – Multilinguales MVP mit rollenbasiertem Zugriff und Animationen",
+                    "• Sneaker-Shop (Beta-Version) – E-Commerce mit CMS, Warenkorb, Filter und Stripe-Zahlung",
+                    "• Aufgabenmanager-App (in Entwicklung) – mit Pomodoro-Timer, Priorisierung und Analyse",
+                    "• Dating-App-Prototyp (in Arbeit) – Echtzeit-Chat und Videoanrufe",
+                    "• Sprachlernplattform für Kinder (geplant) – Gamifiziertes Lernen auf A1-Niveau"
                 ]
             }
         }
