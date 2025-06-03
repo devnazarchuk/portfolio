@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import enMessages from '../../messages/en.json';
 import deMessages from '../../messages/de.json';
-import { FaGithub, FaExternalLinkAlt, FaReact, FaNodeJs, FaGitAlt, FaSass, FaMobile, FaSearch, FaShoppingCart, FaHeart, FaDatabase } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaReact, FaGitAlt, FaSass, FaMobile, FaSearch, FaShoppingCart, FaHeart, FaDatabase } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss, SiNextdotjs, SiAxios, SiFramer, SiVercel, SiReactrouter } from 'react-icons/si';
 import { BiStore, BiCodeAlt, BiGlobe, BiMobileAlt, BiFilterAlt, BiLayer } from 'react-icons/bi';
 import { MdOutlineSpeed, MdOutlineAccessibility, MdOutlineTranslate } from 'react-icons/md';

@@ -6,13 +6,9 @@ import { useEffect, useRef, useState } from 'react';
 import { AiFillFilePdf, AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';
 import { FiMoon, FiSun, FiGlobe, FiDownload, FiMenu, FiX } from 'react-icons/fi';
-import { blockAnimation, textAnimation } from './lib/animation';
-import { experienceData, projectsData } from './lib/data';
+import { textAnimation } from './lib/animation';
 import { Cursor } from './ui/cursor';
-import { ExperienceCard } from './ui/experienceCard';
 import { Link as UiLink } from './ui/link';
-import { ProjectCard } from './ui/projectCard';
-import { ContactForm } from './ui/contactForm';
 import { useTheme } from './context/ThemeContext';
 import { useLanguage } from './context/LanguageContext';
 import enMessages from '../messages/en.json';
@@ -46,7 +42,6 @@ export default function Home() {
         const handleScroll = () => {
             if (experience.current && projects.current && contact.current && about.current && skills.current) {
                 const scrollPosition = window.scrollY + 200;
-                const aboutPosition = about.current.offsetTop;
                 const skillsPosition = skills.current.offsetTop;
                 const experiencePosition = experience.current.offsetTop;
                 const projectsPosition = projects.current.offsetTop;
@@ -332,12 +327,12 @@ export default function Home() {
                                 <NavigationLinks />
                                 <div className='border-t border-[#723bf3]/20 dark:border-[#723bf3]/30 my-2 pt-4'>
                                     <Link
-                                        href='https://www.linkedin.com/in/devnazarchuk/'
+                                        href='https://www.linkedin.com/in/artem-nazarchuk/'
                                         target='_blank'
                                         className='flex items-center gap-2 text-muted hover:text-text-primary'
                                     >
                                         <AiFillLinkedin size='1.5em' />
-                                        <span>Visit LinkedIn</span>
+                                        <span>{t.buttons.linkedin}</span>
                                     </Link>
                                     <Link
                                         href='/artem_nazarchuk_resume.pdf'
@@ -345,7 +340,7 @@ export default function Home() {
                                         className='flex items-center gap-2 text-muted hover:text-text-primary mt-4'
                                     >
                                         <FiDownload size='1.5em' />
-                                        <span>Download Resume</span>
+                                        <span>{t.buttons.resume}</span>
                                     </Link>
                                 </div>
                             </nav>
@@ -377,3 +372,20 @@ export default function Home() {
         </div>
     );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

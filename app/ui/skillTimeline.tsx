@@ -1,21 +1,57 @@
 'use client';
 
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FaReact, FaNodeJs, FaDatabase, FaMobile, FaGitAlt } from 'react-icons/fa';
+import { FaReact, FaGitAlt } from 'react-icons/fa';
 import { 
     SiTypescript, SiNextdotjs, SiTailwindcss, SiFramer, SiJavascript, 
-    SiHtml5, SiCss3, SiGit, SiGithub, SiVercel, SiJest, SiTestinglibrary, 
-    SiEslint, SiPrettier, SiNodedotjs, SiExpress, SiPostgresql, SiPrisma, 
-    SiStrapi, SiSanity, SiSass, SiFigma, SiVite, SiWebpack, SiYarn, 
-    SiMongodb, SiMarkdown, SiExpo, SiFirebase, SiTurborepo
+    SiHtml5, SiCss3, SiGit, SiVercel, SiEslint, SiPrettier, SiNodedotjs, SiExpress, SiPostgresql, SiPrisma, 
+    SiStrapi, SiSanity, SiSass, SiFigma, SiWebpack, SiYarn, 
+    SiMongodb, SiExpo, SiFirebase, SiTurborepo, SiNpm, SiReactrouter, SiAxios
 } from 'react-icons/si';
 import { TbBrandVscode } from 'react-icons/tb';
 import { useLanguage } from '../context/LanguageContext';
 import enMessages from '../../messages/en.json';
 import deMessages from '../../messages/de.json';
 
-const messages = {
+interface Messages {
+    skills: {
+        title: string;
+        subtitle: string;
+        coreTechnologies: string;
+        viewLearningJourney: string;
+        hideLearningJourney: string;
+        viewAllTechnologies: string;
+        hideAllTechnologies: string;
+        learningNote: string;
+        stages: {
+            [key: string]: {
+                title: string;
+                date: string;
+                technologies: {
+                    [key: string]: string;
+                };
+            };
+        };
+        categories: {
+            [key: string]: {
+                title: string;
+                description: string;
+            };
+        };
+        technologyRoles: {
+            [key: string]: {
+                [key: string]: string;
+            };
+        };
+        technologyDescriptions: {
+            [key: string]: string;
+        };
+    };
+}
+
+const messages: { [key: string]: Messages } = {
     en: enMessages,
     de: deMessages
 };
@@ -48,80 +84,6 @@ const stages = [
     }
 ];
 
-const technologyCategories = [
-    {
-        title: "Frontend",
-        description: "Core frontend technologies and frameworks",
-        technologies: [
-            { name: 'HTML5', icon: SiHtml5, role: 'Structure, Semantics', color: '#E34F26' },
-            { name: 'CSS3', icon: SiCss3, role: 'Styling, Animations', color: '#1572B6' },
-            { name: 'SASS / SCSS', icon: SiSass, role: 'CSS Preprocessor', color: '#CC6699' },
-            { name: 'Tailwind CSS', icon: SiTailwindcss, role: 'Utility-First CSS', color: '#06B6D4' },
-            { name: 'JavaScript (ES6+)', icon: SiJavascript, role: 'Modern JS Features', color: '#F7DF1E' },
-            { name: 'TypeScript*', icon: SiTypescript, role: 'Type Safety', color: '#3178C6' },
-            { name: 'React.js', icon: FaReact, role: 'Frontend Library', color: '#61DAFB' },
-            { name: 'Next.js', icon: SiNextdotjs, role: 'React Framework', color: '#000000' },
-            { name: 'Framer Motion', icon: SiFramer, role: 'Animations', color: '#0055FF' },
-            { name: 'Zustand', icon: FaReact, role: 'State Management', color: '#764ABC' },
-            { name: 'React Router', icon: FaReact, role: 'Routing', color: '#61DAFB' },
-            { name: 'Context API', icon: FaReact, role: 'State Management', color: '#61DAFB' },
-            { name: 'Next Image', icon: SiNextdotjs, role: 'Image Optimization', color: '#000000' },
-            { name: 'Radix UI', icon: SiNodedotjs, role: 'UI Components', color: '#339933' },
-            { name: 'Headless UI', icon: SiNodedotjs, role: 'UI Components', color: '#339933' },
-            { name: 'Figma', icon: SiFigma, role: 'UI/UX Design', color: '#F24E1E' },
-        ]
-    },
-    {
-        title: "Backend & APIs",
-        description: "Server-side and API development",
-        technologies: [
-            { name: 'Node.js*', icon: SiNodedotjs, role: 'Runtime Environment', color: '#339933' },
-            { name: 'Express.js*', icon: SiExpress, role: 'Web Framework', color: '#000000' },
-            { name: 'REST API*', icon: SiNodedotjs, role: 'API Development', color: '#339933' },
-            { name: 'JWT (Authentication)*', icon: SiNodedotjs, role: 'Security', color: '#000000' },
-        ]
-    },
-    {
-        title: "Databases & ORM",
-        description: "Data storage and management",
-        technologies: [
-            { name: 'PostgreSQL*', icon: SiPostgresql, role: 'Database', color: '#336791' },
-            { name: 'MongoDB*', icon: SiMongodb, role: 'NoSQL Database', color: '#47A248' },
-            { name: 'Prisma*', icon: SiPrisma, role: 'ORM', color: '#2D3748' },
-        ]
-    },
-    {
-        title: "CMS & Content",
-        description: "Content management systems",
-        technologies: [
-            { name: 'Strapi*', icon: SiStrapi, role: 'Headless CMS', color: '#2F2E8B' },
-            { name: 'Sanity*', icon: SiSanity, role: 'Content Platform', color: '#F03E2F' },
-        ]
-    },
-    {
-        title: "Mobile & Cross-Platform",
-        description: "Mobile and cross-platform development",
-        technologies: [
-            { name: 'React Native*', icon: FaReact, role: 'Mobile Framework', color: '#61DAFB' },
-            { name: 'Expo*', icon: SiExpo, role: 'Development Platform', color: '#000020' },
-            { name: 'Firebase*', icon: SiFirebase, role: 'Backend Services', color: '#FFCA28' },
-        ]
-    },
-    {
-        title: "Tooling & DevOps",
-        description: "Development tools and practices",
-        technologies: [
-            { name: 'Git & GitHub', icon: FaGitAlt, role: 'Version Control', color: '#F05032' },
-            { name: 'Vercel', icon: SiVercel, role: 'Deployment', color: '#000000' },
-            { name: 'Webpack*', icon: SiWebpack, role: 'Module Bundler', color: '#8DD6F9' },
-            { name: 'Prettier', icon: SiPrettier, role: 'Code Formatting', color: '#F7B93E' },
-            { name: 'ESLint', icon: SiEslint, role: 'Code Quality', color: '#4B32C3' },
-            { name: 'TurboRepo*', icon: SiTurborepo, role: 'Monorepo Tool', color: '#EF4444' },
-            { name: 'Husky*', icon: SiGit, role: 'Git Hooks', color: '#000000' },
-        ]
-    }
-];
-
 const mainTechnologies = [
     "React",
     "JavaScript",
@@ -133,7 +95,7 @@ const mainTechnologies = [
     "VSCode",
 ];
 
-const techIcons: { [key: string]: JSX.Element } = {
+const techIcons: { [key: string]: React.ReactNode } = {
     HTML5: <SiHtml5 className="text-[#E34F26]" />,
     CSS3: <SiCss3 className="text-[#1572B6]" />,
     JavaScript: <SiJavascript className="text-[#F7DF1E]" />,
@@ -145,10 +107,10 @@ const techIcons: { [key: string]: JSX.Element } = {
     ESLint: <SiEslint className="text-[#4B32C3]" />,
     "Framer Motion": <SiFramer className="text-[#0055FF]" />,
     React: <FaReact className="text-[#61DAFB]" />,
-    npm: <SiNodedotjs className="text-[#CB3837]" />,
+    npm: <SiNpm className="text-[#CB3837]" />,
     yarn: <SiYarn className="text-[#2C8EBB]" />,
     Zustand: <FaReact className="text-[#764ABC]" />,
-    "React Router": <FaReact className="text-[#61DAFB]" />,
+    "React Router": <SiReactrouter className="text-[#CA4245]" />,
     "Context API": <FaReact className="text-[#61DAFB]" />,
     "Custom Hooks": <FaReact className="text-[#61DAFB]" />,
     "Next.js": <SiNextdotjs className="text-black dark:text-white" />,
@@ -176,12 +138,13 @@ const techIcons: { [key: string]: JSX.Element } = {
     TurboRepo: <SiTurborepo className="text-[#EF4444]" />,
     "Node.js*": <SiNodedotjs className="text-[#339933]" />,
     VSCode: <TbBrandVscode className="text-[#007ACC]" />,
+    Axios: <SiAxios className="text-[#5A29E4]" />
 };
 
 interface TechCardProps {
     tech: {
         name: string;
-        icon: any;
+        icon: React.ComponentType<{ size?: number; color?: string; className?: string }>;
         role: string;
         color: string;
     };
@@ -224,6 +187,80 @@ export function SkillTimeline() {
     const t = messages[language].skills;
     const [isExpanded, setIsExpanded] = useState(false);
     const [showAllTech, setShowAllTech] = useState(false);
+
+    const technologyCategories = [
+        {
+            title: t.categories.frontend.title,
+            description: t.technologyDescriptions.frontend,
+            technologies: [
+                { name: 'HTML5', icon: SiHtml5, role: t.technologyRoles.frontend['HTML5'], color: '#E34F26' },
+                { name: 'CSS3', icon: SiCss3, role: t.technologyRoles.frontend['CSS3'], color: '#1572B6' },
+                { name: 'SASS / SCSS', icon: SiSass, role: t.technologyRoles.frontend['SASS / SCSS'], color: '#CC6699' },
+                { name: 'Tailwind CSS', icon: SiTailwindcss, role: t.technologyRoles.frontend['Tailwind CSS'], color: '#06B6D4' },
+                { name: 'JavaScript (ES6+)', icon: SiJavascript, role: t.technologyRoles.frontend['JavaScript (ES6+)'], color: '#F7DF1E' },
+                { name: 'TypeScript*', icon: SiTypescript, role: t.technologyRoles.frontend['TypeScript*'], color: '#3178C6' },
+                { name: 'React.js', icon: FaReact, role: t.technologyRoles.frontend['React.js'], color: '#61DAFB' },
+                { name: 'Next.js', icon: SiNextdotjs, role: t.technologyRoles.frontend['Next.js'], color: '#000000' },
+                { name: 'Framer Motion', icon: SiFramer, role: t.technologyRoles.frontend['Framer Motion'], color: '#0055FF' },
+                { name: 'Zustand', icon: FaReact, role: t.technologyRoles.frontend['Zustand'], color: '#764ABC' },
+                { name: 'React Router', icon: FaReact, role: t.technologyRoles.frontend['React Router'], color: '#61DAFB' },
+                { name: 'Context API', icon: FaReact, role: t.technologyRoles.frontend['Context API'], color: '#61DAFB' },
+                { name: 'Next Image', icon: SiNextdotjs, role: t.technologyRoles.frontend['Next Image'], color: '#000000' },
+                { name: 'Radix UI', icon: SiNodedotjs, role: t.technologyRoles.frontend['Radix UI'], color: '#339933' },
+                { name: 'Headless UI', icon: SiNodedotjs, role: t.technologyRoles.frontend['Headless UI'], color: '#339933' },
+                { name: 'Figma', icon: SiFigma, role: t.technologyRoles.frontend['Figma'], color: '#F24E1E' },
+            ]
+        },
+        {
+            title: t.categories.backend.title,
+            description: t.technologyDescriptions.backend,
+            technologies: [
+                { name: 'Node.js*', icon: SiNodedotjs, role: t.technologyRoles.backend['Node.js*'], color: '#339933' },
+                { name: 'Express.js*', icon: SiExpress, role: t.technologyRoles.backend['Express.js*'], color: '#000000' },
+                { name: 'REST API*', icon: SiNodedotjs, role: t.technologyRoles.backend['REST API*'], color: '#339933' },
+                { name: 'JWT (Authentication)*', icon: SiNodedotjs, role: t.technologyRoles.backend['JWT (Authentication)*'], color: '#000000' },
+            ]
+        },
+        {
+            title: t.categories.databases.title,
+            description: t.technologyDescriptions.databases,
+            technologies: [
+                { name: 'PostgreSQL*', icon: SiPostgresql, role: t.technologyRoles.databases['PostgreSQL*'], color: '#336791' },
+                { name: 'MongoDB*', icon: SiMongodb, role: t.technologyRoles.databases['MongoDB*'], color: '#47A248' },
+                { name: 'Prisma*', icon: SiPrisma, role: t.technologyRoles.databases['Prisma*'], color: '#2D3748' },
+            ]
+        },
+        {
+            title: t.categories.cms.title,
+            description: t.technologyDescriptions.cms,
+            technologies: [
+                { name: 'Strapi*', icon: SiStrapi, role: t.technologyRoles.cms['Strapi*'], color: '#2F2E8B' },
+                { name: 'Sanity*', icon: SiSanity, role: t.technologyRoles.cms['Sanity*'], color: '#F03E2F' },
+            ]
+        },
+        {
+            title: t.categories.mobile.title,
+            description: t.technologyDescriptions.mobile,
+            technologies: [
+                { name: 'React Native*', icon: FaReact, role: t.technologyRoles.mobile['React Native*'], color: '#61DAFB' },
+                { name: 'Expo*', icon: SiExpo, role: t.technologyRoles.mobile['Expo*'], color: '#000020' },
+                { name: 'Firebase*', icon: SiFirebase, role: t.technologyRoles.mobile['Firebase*'], color: '#FFCA28' },
+            ]
+        },
+        {
+            title: t.categories.tooling.title,
+            description: t.technologyDescriptions.tooling,
+            technologies: [
+                { name: 'Git & GitHub', icon: FaGitAlt, role: t.technologyRoles.tooling['Git & GitHub'], color: '#F05032' },
+                { name: 'Vercel', icon: SiVercel, role: t.technologyRoles.tooling['Vercel'], color: '#000000' },
+                { name: 'Webpack*', icon: SiWebpack, role: t.technologyRoles.tooling['Webpack*'], color: '#8DD6F9' },
+                { name: 'Prettier', icon: SiPrettier, role: t.technologyRoles.tooling['Prettier'], color: '#F7B93E' },
+                { name: 'ESLint', icon: SiEslint, role: t.technologyRoles.tooling['ESLint'], color: '#4B32C3' },
+                { name: 'TurboRepo*', icon: SiTurborepo, role: t.technologyRoles.tooling['TurboRepo*'], color: '#EF4444' },
+                { name: 'Husky*', icon: SiGit, role: t.technologyRoles.tooling['Husky*'], color: '#000000' },
+            ]
+        }
+    ];
 
     return (
         <div className="container mx-auto px-4 py-16">
@@ -328,13 +365,13 @@ export function SkillTimeline() {
                                         <span className="text-sm font-semibold text-slate-600 dark:text-slate-300 max-[640px]:ml-8 max-[640px]:text-xs">{t.stages[stage.key].date}</span>
                                     </div>
                                     <div className="flex flex-wrap gap-1.5 max-[640px]:gap-1">
-                                        {stage.technologies.map((tech) => (
+                                        {Object.entries(t.stages[stage.key].technologies).map(([key, value]) => (
                                             <span
-                                                key={tech}
+                                                key={key}
                                                 className="bg-white/20 dark:bg-black/20 backdrop-blur-sm border border-[#723bf3]/30 dark:border-[#723bf3]/40 text-slate-800 dark:text-white px-2.5 py-0.5 max-[640px]:px-2 max-[640px]:py-0.5 rounded-full text-sm max-[640px]:text-xs font-medium flex items-center gap-1.5 max-[640px]:gap-1"
                                             >
-                                                {techIcons[tech]}
-                                                {t.stages[stage.key].technologies[tech] || tech}
+                                                {techIcons[key] || null}
+                                                {value}
                                             </span>
                                         ))}
                                     </div>

@@ -11,10 +11,11 @@ const messages = {
 
 type ProjectKey = keyof typeof messages.en.projects.items;
 
-interface Props {
-    params: {
+interface PageProps {
+    params: Promise<{
         slug: string;
-    };
+    }>;
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
 export async function generateStaticParams() {
@@ -24,8 +25,9 @@ export async function generateStaticParams() {
     }));
 }
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const project = messages.en.projects.items[params.slug as ProjectKey];
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const resolvedParams = await params;
+    const project = messages.en.projects.items[resolvedParams.slug as ProjectKey];
     
     if (!project) {
         return {
@@ -44,19 +46,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
-export default function ProjectPage({ params }: Props) {
-    const project = messages.en.projects.items[params.slug as ProjectKey];
+export default async function ProjectPage({ params }: PageProps) {
+    const resolvedParams = await params;
+    const project = messages.en.projects.items[resolvedParams.slug as ProjectKey];
     
     if (!project) {
         notFound();
     }
 
+    // Default URLs for projects
+    const projectUrls = {
+        depity: {
+            github: 'https://github.com/yourusername/depity',
+            demo: 'https://depity.vercel.app'
+        },
+        sneakers: {
+            github: 'https://github.com/yourusername/react-sneakers',
+            demo: 'https://react-sneakers.vercel.app'
+        },
+        pappert: {
+            github: 'https://github.com/yourusername/pappert',
+            demo: 'https://pappert.vercel.app'
+        }
+    };
+
+    const urls = projectUrls[resolvedParams.slug as ProjectKey];
+
     return (
         <main className="container mx-auto px-4 py-8">
             <ProjectCard 
-                itemKey={params.slug as ProjectKey}
-                github={project.github}
-                live={project.live}
+                itemKey={resolvedParams.slug as ProjectKey}
+                github={urls.github}
+                demo={urls.demo}
             />
         </main>
     );

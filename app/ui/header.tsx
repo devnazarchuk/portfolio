@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import enMessages from '../../messages/en.json';
 import deMessages from '../../messages/de.json';
-import { FaGithub, FaLinkedin, FaFilePdf } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaFilePdf, FaBars, FaTimes } from 'react-icons/fa';
 
 const messages = {
     en: enMessages,
@@ -15,21 +15,17 @@ const messages = {
 export function Header() {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const { language, setLanguage } = useLanguage();
+    const { language, toggleLanguage } = useLanguage();
     const t = messages[language].nav;
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            setIsScrolled(window.scrollY > 0);
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
@@ -40,7 +36,7 @@ export function Header() {
     };
 
     return (
-        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 dark:bg-black/80 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}>
+        <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 dark:bg-black/80 backdrop-blur-sm shadow-sm' : ''}`}>
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between h-20">
                     {/* Left section: Logo */}
@@ -65,6 +61,12 @@ export function Header() {
                         <button onClick={() => scrollToSection('contact')} className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors">
                             {t.contact}
                         </button>
+                        <button
+                            onClick={toggleLanguage}
+                            className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors"
+                        >
+                            {language === 'en' ? 'DE' : 'EN'}
+                        </button>
                     </nav>
 
                     {/* Right section: Social Links & Language Button */}
@@ -78,32 +80,12 @@ export function Header() {
                         <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors">
                             <FaFilePdf size={24} />
                         </a>
-                        <button
-                            onClick={() => setLanguage(language === 'en' ? 'de' : 'en')}
-                            className="px-4 py-2 rounded-lg bg-[#723bf3] text-white hover:bg-[#723bf3]/90 transition-colors"
-                        >
-                            {language === 'en' ? 'DE' : 'EN'}
-                        </button>
                         {/* Mobile Menu Button */}
                         <button
-                            onClick={toggleMenu}
                             className="md:hidden text-[#723bf3] hover:text-[#723bf3]/80 transition-colors"
+                            onClick={() => setIsOpen(!isOpen)}
                         >
-                            <svg
-                                className="w-6 h-6"
-                                fill="none"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                {isOpen ? (
-                                    <path d="M6 18L18 6M6 6l12 12" />
-                                ) : (
-                                    <path d="M4 6h16M4 12h16M4 18h16" />
-                                )}
-                            </svg>
+                            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
                         </button>
                     </div>
                 </div>
@@ -134,6 +116,12 @@ export function Header() {
                                 </button>
                                 <button onClick={() => scrollToSection('contact')} className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors">
                                     {t.contact}
+                                </button>
+                                <button
+                                    onClick={toggleLanguage}
+                                    className="block text-muted hover:text-text-primary transition-colors"
+                                >
+                                    {language === 'en' ? 'DE' : 'EN'}
                                 </button>
                             </nav>
                         </div>

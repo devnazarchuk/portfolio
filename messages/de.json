@@ -9,6 +9,10 @@
         "projects": "projekte",
         "contact": "kontakt"
     },
+    "buttons": {
+        "linkedin": "LinkedIn besuchen",
+        "resume": "Lebenslauf herunterladen"
+    },
     "about": {
         "title": "Über mich",
         "paragraph1": "Seit 2022 bin ich intensiv in der Frontend-Entwicklung tätig, beginnend mit HTML- und CSS-Grundlagen bis hin zu modernen JavaScript-Frameworks. Ich genieße es, komplexe UI-Herausforderungen zu lösen und Performance sowie Zugänglichkeit zu optimieren.",
@@ -121,7 +125,64 @@
                 "description": "Entwicklungstools und -praktiken"
             }
         },
-        "learningNote": "* Mit einem Sternchen markierte Technologien werden derzeit im Rahmen meiner Full-Stack-Entwicklungsroadmap gelernt oder verbessert."
+        "learningNote": "* Mit einem Sternchen markierte Technologien werden derzeit im Rahmen meiner Full-Stack-Entwicklungsroadmap gelernt oder verbessert.",
+        "technologyRoles": {
+            "frontend": {
+                "HTML5": "Struktur, Semantik",
+                "CSS3": "Styling, Animationen",
+                "SASS / SCSS": "CSS-Präprozessor",
+                "Tailwind CSS": "Utility-First CSS",
+                "JavaScript (ES6+)": "Moderne JS-Funktionen",
+                "TypeScript*": "Typsicherheit",
+                "React.js": "Frontend-Bibliothek",
+                "Next.js": "React-Framework",
+                "Framer Motion": "Animationen",
+                "Zustand": "State Management",
+                "React Router": "Routing",
+                "Context API": "State Management",
+                "Next Image": "Bildoptimierung",
+                "Radix UI": "UI-Komponenten",
+                "Headless UI": "UI-Komponenten",
+                "Figma": "UI/UX-Design"
+            },
+            "backend": {
+                "Node.js*": "Laufzeitumgebung",
+                "Express.js*": "Web-Framework",
+                "REST API*": "API-Entwicklung",
+                "JWT (Authentication)*": "Sicherheit"
+            },
+            "databases": {
+                "PostgreSQL*": "Datenbank",
+                "MongoDB*": "NoSQL-Datenbank",
+                "Prisma*": "ORM"
+            },
+            "cms": {
+                "Strapi*": "Headless CMS",
+                "Sanity*": "Content-Plattform"
+            },
+            "mobile": {
+                "React Native*": "Mobile-Framework",
+                "Expo*": "Entwicklungsplattform",
+                "Firebase*": "Backend-Dienste"
+            },
+            "tooling": {
+                "Git & GitHub": "Versionskontrolle",
+                "Vercel": "Deployment",
+                "Webpack*": "Modul-Bundler",
+                "Prettier": "Code-Formatierung",
+                "ESLint": "Code-Qualität",
+                "TurboRepo*": "Monorepo-Tool",
+                "Husky*": "Git-Hooks"
+            }
+        },
+        "technologyDescriptions": {
+            "frontend": "Kern-Frontend-Technologien und Frameworks für moderne Webanwendungen",
+            "backend": "Server-seitige Entwicklung und API-Integration",
+            "databases": "Datenbanken und Objekt-Relationales Mapping",
+            "cms": "Content-Management-Systeme für dynamische Inhalte",
+            "mobile": "Mobile und plattformübergreifende Entwicklung",
+            "tooling": "Entwicklungstools und DevOps-Praktiken"
+        }
     },
     "experience": {
         "title": "Erfahrung",

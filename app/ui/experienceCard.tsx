@@ -1,26 +1,17 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import enMessages from '../../messages/en.json';
 import deMessages from '../../messages/de.json';
-import { FaReact, FaNodeJs, FaGitAlt, FaSass, FaMobile, FaSearch, FaShoppingCart, FaHeart, FaDatabase } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiNextdotjs, SiAxios, SiFramer, SiVercel, SiReactrouter } from 'react-icons/si';
-import { BiStore, BiCodeAlt, BiGlobe, BiMobileAlt, BiFilterAlt, BiLayer } from 'react-icons/bi';
-import { MdOutlineSpeed, MdOutlineAccessibility, MdOutlineTranslate, MdOutlineWork, MdOutlineSchool } from 'react-icons/md';
+import { FaReact } from 'react-icons/fa';
+import { SiTypescript, SiTailwindcss, SiNextdotjs } from 'react-icons/si';
+import { BiStore, BiGlobe } from 'react-icons/bi';
+import { MdOutlineSpeed, MdOutlineAccessibility, MdOutlineTranslate, MdOutlineWork } from 'react-icons/md';
 
 const messages = {
     en: enMessages,
     de: deMessages
 };
-
-interface ExperienceItem {
-    title: string;
-    company: string;
-    period: string;
-    description: string[];
-    tech: string[];
-}
 
 const techIcons: Record<string, React.ReactNode> = {
     'React': <FaReact className="text-[#61DAFB]" />,
@@ -28,13 +19,13 @@ const techIcons: Record<string, React.ReactNode> = {
     'TypeScript': <SiTypescript className="text-[#3178C6]" />,
     'Tailwind CSS': <SiTailwindcss className="text-[#06B6D4]" />,
     'Zustand': <BiStore className="text-[#764ABC]" />,
-    'Vercel': <SiVercel className="text-[#000000]" />,
+    'Vercel': <SiNextdotjs className="text-[#000000]" />,
     'Accessibility': <MdOutlineAccessibility className="text-[#4A90E2]" />,
     'Barrierefreiheit': <MdOutlineAccessibility className="text-[#4A90E2]" />,
     'Performance': <MdOutlineSpeed className="text-[#4CAF50]" />,
     'i18n': <MdOutlineTranslate className="text-[#4A90E2]" />,
     'Agile': <MdOutlineWork className="text-[#4A90E2]" />,
-    'Responsive': <FaMobile className="text-[#4A90E2]" />,
+    'Responsive': <FaReact className="text-[#4A90E2]" />,
     'SEO': <BiGlobe className="text-[#4A90E2]" />
 };
 

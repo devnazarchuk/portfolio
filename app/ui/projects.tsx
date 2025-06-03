@@ -11,6 +11,14 @@ const messages = {
     de: deMessages
 };
 
+type ProjectKey = 'depity' | 'sneakers' | 'pappert';
+
+interface ProjectData {
+    key: ProjectKey;
+    github: string;
+    demo: string;
+}
+
 const blockAnimation = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -22,7 +30,7 @@ const blockAnimation = {
     }
 };
 
-const projectsData = [
+const projectsData: ProjectData[] = [
     { 
         key: 'depity', 
         github: 'https://github.com/devnazarchuk/depity', 
