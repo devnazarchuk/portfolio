@@ -179,12 +179,12 @@ export default function Home() {
     );
 
     return (
-        <div className='max-w-7xl mx-auto px-4 flex max-lg:flex-col max-lg:px-10 max-[425px]:px-4 overflow-hidden'>
+        <div className='max-w-7xl mx-auto px-4 flex max-lg:flex-col max-lg:px-10 max-[425px]:px-4 overflow-hidden' suppressHydrationWarning>
             <Cursor />
             
             {/* Desktop Sidebar */}
-            <div className='fixed max-lg:hidden flex flex-col gap-20 h-screen justify-center'>
-                <div>
+            <div className='fixed max-lg:hidden flex flex-col gap-20 h-screen justify-center' suppressHydrationWarning>
+                <div suppressHydrationWarning>
                     <motion.h1
                         custom={1}
                         variants={textAnimation}
@@ -219,6 +219,7 @@ export default function Home() {
                     initial='hidden'
                     whileInView='visible'
                     className='flex flex-col gap-6'
+                    suppressHydrationWarning
                 >
                     <NavigationLinks />
                 </motion.nav>
@@ -228,13 +229,14 @@ export default function Home() {
                     initial='hidden'
                     whileInView='visible'
                     className='flex gap-4'
+                    suppressHydrationWarning
                 >
                     <SocialButtons />
                 </motion.div>
             </div>
 
             {/* Mobile Initial Section */}
-            <div className='lg:hidden pt-20 pb-10'>
+            <div className='lg:hidden pt-20 pb-10' suppressHydrationWarning>
                 <motion.div
                     custom={1}
                     variants={textAnimation}
@@ -245,10 +247,10 @@ export default function Home() {
                     <h1 className='text-text-primary font-bold text-4xl mb-4'>{t.title}</h1>
                     <p className='text-text-primary text-xl mb-4'>{t.subtitle}</p>
                     <p className='text-muted mb-8'>{t.description}</p>
-                    <nav className='flex flex-col gap-4 mb-8'>
+                    <nav className='flex flex-col gap-4 mb-8' suppressHydrationWarning>
                         <NavigationLinks />
                     </nav>
-                    <div className='flex gap-4 justify-center'>
+                    <div className='flex gap-4 justify-center' suppressHydrationWarning>
                         <SocialButtons />
                     </div>
                 </motion.div>
@@ -349,23 +351,23 @@ export default function Home() {
                 )}
             </AnimatePresence>
 
-            <div className='w-80 h-80 opacity-60 rounded-full bg-[#723bf3] shadow-2xl shadow-[#723bf3] fixed top-0 left-0 pointer-events-none -z-10 blur-3xl'></div>
-            <div className='w-80 h-80 opacity-60 rounded-full bg-[#723bf3] shadow-2xl shadow-[#723bf3] fixed bottom-0 right-0 pointer-events-none -z-10 blur-3xl'></div>
+            <div className='w-80 h-80 opacity-60 rounded-full bg-[#723bf3] shadow-2xl shadow-[#723bf3] fixed top-0 left-0 pointer-events-none -z-10 blur-3xl' suppressHydrationWarning></div>
+            <div className='w-80 h-80 opacity-60 rounded-full bg-[#723bf3] shadow-2xl shadow-[#723bf3] fixed bottom-0 right-0 pointer-events-none -z-10 blur-3xl' suppressHydrationWarning></div>
 
-            <div className='pl-[600px] max-xl:pl-[500px] max-lg:pl-0'>
-                <div id="about" ref={about}>
+            <div className='pl-[600px] max-xl:pl-[500px] max-lg:pl-0' suppressHydrationWarning>
+                <div id="about" ref={about} suppressHydrationWarning>
                     <About />
                 </div>
-                <div id="skills" ref={skills}>
+                <div id="skills" ref={skills} suppressHydrationWarning>
                     <Skills />
                 </div>
-                <div id="experience" ref={experience}>
+                <div id="experience" ref={experience} suppressHydrationWarning>
                     <Experience />
                 </div>
-                <div id="projects" ref={projects}>
+                <div id="projects" ref={projects} suppressHydrationWarning>
                     <Projects />
                 </div>
-                <div id="contact" ref={contact}>
+                <div id="contact" ref={contact} suppressHydrationWarning>
                     <Contact />
                 </div>
             </div>
