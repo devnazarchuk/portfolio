@@ -1,33 +1,48 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider } from './context/LanguageContext';
+import { ThemeProvider } from './context/ThemeContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: 'Artem Nazarchuk - Full Stack Developer',
-    description: 'Full Stack Developer specializing in React, Node.js, and TypeScript',
-    icons: {
-        icon: [
-            { url: '/favicon.ico', sizes: 'any' },
-            { url: '/icon.png', type: 'image/png' },
-        ],
-        apple: [
-            { url: '/apple-icon.png', type: 'image/png' },
-        ],
+    title: {
+        default: 'Artem Nazarchuk | Frontend Developer',
+        template: '%s | Artem Nazarchuk',
     },
+    description: 'Frontend developer specializing in React, Next.js, and TypeScript. Building fast, scalable, and accessible web applications.',
+    keywords: ['frontend', 'developer', 'react', 'next.js', 'typescript', 'portfolio', 'artem nazarchuk'],
+    authors: [{ name: 'Artem Nazarchuk' }],
+    creator: 'Artem Nazarchuk',
+    openGraph: {
+        type: 'website',
+        locale: 'en_US',
+        url: 'https://artemnazarchuk.com',
+        title: 'Artem Nazarchuk | Frontend Developer',
+        description: 'Frontend developer specializing in React, Next.js, and TypeScript. Building fast, scalable, and accessible web applications.',
+        siteName: 'Artem Nazarchuk',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Artem Nazarchuk | Frontend Developer',
+        description: 'Frontend developer specializing in React, Next.js, and TypeScript. Building fast, scalable, and accessible web applications.',
+        creator: '@devnazarchuk',
+    },
+    icons: {
+        icon: '/favicon.ico',
+        apple: '/apple-touch-icon.png',
+    },
+    manifest: '/site.webmanifest',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
     return (
-        <html lang='en' suppressHydrationWarning>
-            <head>
-                <link rel="icon" href="/favicon.ico" sizes="any" />
-                <link rel="icon" href="/icon.png" type="image/png" />
-                <link rel="apple-touch-icon" href="/apple-icon.png" />
-            </head>
+        <html lang="en">
             <body className={inter.className}>
                 <ThemeProvider>
                     <LanguageProvider>{children}</LanguageProvider>

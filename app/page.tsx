@@ -1,11 +1,11 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { AiFillFilePdf, AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';
-import { FiMoon, FiSun, FiGlobe, FiDownload } from 'react-icons/fi';
+import { FiMoon, FiSun, FiGlobe, FiDownload, FiMenu, FiX } from 'react-icons/fi';
 import { blockAnimation, textAnimation } from './lib/animation';
 import { experienceData, projectsData } from './lib/data';
 import { Cursor } from './ui/cursor';
@@ -17,6 +17,11 @@ import { useTheme } from './context/ThemeContext';
 import { useLanguage } from './context/LanguageContext';
 import enMessages from '../messages/en.json';
 import deMessages from '../messages/de.json';
+import { Projects } from './ui/projects';
+import { Skills } from './ui/skills';
+import { About } from './ui/about';
+import { Experience } from './ui/experience';
+import { Contact } from './ui/contact';
 
 const messages = {
     en: enMessages,
@@ -24,51 +29,166 @@ const messages = {
 };
 
 export default function Home() {
-    const [activeLink, setActiveLink] = useState<'about' | 'experience' | 'projects' | 'contact'>('about');
+    const { language } = useLanguage();
+    const t = messages[language];
+    const [activeLink, setActiveLink] = useState<'about' | 'skills' | 'experience' | 'projects' | 'contact'>('about');
+    const [isHeaderVisible, setIsHeaderVisible] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const about = useRef<HTMLDivElement | null>(null);
+    const skills = useRef<HTMLDivElement | null>(null);
     const experience = useRef<HTMLDivElement | null>(null);
     const projects = useRef<HTMLDivElement | null>(null);
     const contact = useRef<HTMLDivElement | null>(null);
     const { theme, toggleTheme } = useTheme();
-    const { language, toggleLanguage } = useLanguage();
-    const t = messages[language];
-
-    const scrollToSection = (elementRef: React.RefObject<HTMLElement | null>) => {
-        if (elementRef.current) {
-            window.scrollTo({
-                top: elementRef.current.offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    };
+    const { toggleLanguage } = useLanguage();
 
     useEffect(() => {
         const handleScroll = () => {
-            if (experience.current && projects.current && contact.current && about.current) {
+            if (experience.current && projects.current && contact.current && about.current && skills.current) {
                 const scrollPosition = window.scrollY + 200;
+                const aboutPosition = about.current.offsetTop;
+                const skillsPosition = skills.current.offsetTop;
+                const experiencePosition = experience.current.offsetTop;
+                const projectsPosition = projects.current.offsetTop;
+                const contactPosition = contact.current.offsetTop;
 
-                if (scrollPosition >= experience.current.offsetTop && scrollPosition < projects.current.offsetTop) {
-                    setActiveLink('experience');
-                } else if (scrollPosition >= projects.current.offsetTop && scrollPosition < contact.current.offsetTop) {
-                    setActiveLink('projects');
-                } else if (scrollPosition >= contact.current.offsetTop) {
-                    setActiveLink('contact');
-                } else {
+                if (scrollPosition < skillsPosition) {
                     setActiveLink('about');
+                } else if (scrollPosition < experiencePosition) {
+                    setActiveLink('skills');
+                } else if (scrollPosition < projectsPosition) {
+                    setActiveLink('experience');
+                } else if (scrollPosition < contactPosition) {
+                    setActiveLink('projects');
+                } else {
+                    setActiveLink('contact');
+                }
+
+                // Show header when scrolled past the initial section and hide when back at the top
+                const initialSectionHeight = about.current.offsetHeight;
+                const shouldShowHeader = window.scrollY > initialSectionHeight;
+                setIsHeaderVisible(shouldShowHeader);
+                
+                // Close mobile menu when scrolling up to initial section
+                if (!shouldShowHeader && isMobileMenuOpen) {
+                    setIsMobileMenuOpen(false);
                 }
             }
         };
 
         window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [isMobileMenuOpen]);
+
+    const scrollToSection = (section: 'about' | 'skills' | 'experience' | 'projects' | 'contact') => {
+        const element = document.getElementById(section);
+        if (element) {
+            const yOffset = 100;
+            const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+            window.scrollTo({
+                top: y,
+                behavior: 'smooth'
+            });
+        }
+        setActiveLink(section);
+        setIsMobileMenuOpen(false);
+    };
+
+    const NavigationLinks = () => (
+        <>
+            <UiLink
+                isActive={activeLink === 'about'}
+                onClick={() => scrollToSection('about')}
+            >
+                {t.nav.about}
+            </UiLink>
+            <UiLink
+                isActive={activeLink === 'skills'}
+                onClick={() => scrollToSection('skills')}
+            >
+                {t.nav.skills}
+            </UiLink>
+            <UiLink
+                isActive={activeLink === 'experience'}
+                onClick={() => scrollToSection('experience')}
+            >
+                {t.nav.experience}
+            </UiLink>
+            <UiLink
+                isActive={activeLink === 'projects'}
+                onClick={() => scrollToSection('projects')}
+            >
+                {t.nav.projects}
+            </UiLink>
+            <UiLink
+                isActive={activeLink === 'contact'}
+                onClick={() => scrollToSection('contact')}
+            >
+                {t.nav.contact}
+            </UiLink>
+        </>
+    );
+
+    const SocialButtons = () => (
+        <>
+            <Link
+                href='https://github.com/devnazarchuk'
+                target='_blank'
+                className='text-muted hover:text-text-primary'
+                aria-label='GitHub Profile'
+            >
+                <AiFillGithub size='2em' />
+            </Link>
+            <Link
+                href='https://www.linkedin.com/in/devnazarchuk/'
+                target='_blank'
+                className='text-muted hover:text-text-primary'
+                aria-label='LinkedIn Profile'
+            >
+                <AiFillLinkedin size='2em' />
+            </Link>
+            <Link
+                href='/artem_nazarchuk_resume.pdf'
+                target='_blank'
+                className='text-muted hover:text-text-primary'
+                aria-label='See Resume'
+            >
+                <AiFillFilePdf size='2em' />
+            </Link>
+            <button
+                aria-label='Copy Email Address'
+                onClick={() => {
+                    navigator.clipboard.writeText('devnazarchuk@gmail.com');
+                    alert('Email copied to clipboard!');
+                }}
+                className='text-muted hover:text-text-primary'
+            >
+                <MdEmail size='2em' />
+            </button>
+            <button
+                onClick={toggleTheme}
+                className='text-muted hover:text-text-primary'
+                aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+            >
+                {theme === 'dark' ? <FiSun size='2em' /> : <FiMoon size='2em' />}
+            </button>
+            <button
+                onClick={toggleLanguage}
+                className='text-muted hover:text-text-primary'
+                aria-label={`Switch to ${language === 'en' ? 'German' : 'English'}`}
+            >
+                <FiGlobe size='2em' />
+            </button>
+        </>
+    );
 
     return (
         <div className='max-w-7xl mx-auto px-4 flex max-lg:flex-col max-lg:px-10 max-[425px]:px-4 overflow-hidden'>
             <Cursor />
-            <div className='fixed max-lg:static flex flex-col gap-20 h-screen justify-center'>
+            
+            {/* Desktop Sidebar */}
+            <div className='fixed max-lg:hidden flex flex-col gap-20 h-screen justify-center'>
                 <div>
                     <motion.h1
                         custom={1}
@@ -105,44 +225,8 @@ export default function Home() {
                     whileInView='visible'
                     className='flex flex-col gap-6'
                 >
-                    <UiLink
-                        isActive={activeLink === 'about'}
-                        onClick={() => {
-                            setActiveLink('about');
-                            scrollToSection(about);
-                        }}
-                    >
-                        {t.nav.about}
-                    </UiLink>
-                    <UiLink
-                        isActive={activeLink === 'experience'}
-                        onClick={() => {
-                            setActiveLink('experience');
-                            scrollToSection(experience);
-                        }}
-                    >
-                        {t.nav.experience}
-                    </UiLink>
-                    <UiLink
-                        isActive={activeLink === 'projects'}
-                        onClick={() => {
-                            setActiveLink('projects');
-                            scrollToSection(projects);
-                        }}
-                    >
-                        {t.nav.projects}
-                    </UiLink>
-                    <UiLink
-                        isActive={activeLink === 'contact'}
-                        onClick={() => {
-                            setActiveLink('contact');
-                            scrollToSection(contact);
-                        }}
-                    >
-                        {t.nav.contact}
-                    </UiLink>
+                    <NavigationLinks />
                 </motion.nav>
-
                 <motion.div
                     custom={4}
                     variants={textAnimation}
@@ -150,180 +234,145 @@ export default function Home() {
                     whileInView='visible'
                     className='flex gap-4'
                 >
-                    <Link
-                        href='https://github.com/devnazarchuk'
-                        target='_blank'
-                        className='text-muted hover:text-text-primary'
-                        aria-label='GitHub Profile'
-                    >
-                        <AiFillGithub size='2em' />
-                    </Link>
-                    <Link
-                        href='https://www.linkedin.com/in/devnazarchuk/'
-                        target='_blank'
-                        className='text-muted hover:text-text-primary'
-                        aria-label='LinkedIn Profile'
-                    >
-                        <AiFillLinkedin size='2em' />
-                    </Link>
-                    <Link
-                        href='/artem_nazarchuk_resume.pdf'
-                        target='_blank'
-                        className='text-muted hover:text-text-primary'
-                        aria-label='See Resume'
-                    >
-                        <AiFillFilePdf size='2em' />
-                    </Link>
-                    <button
-                        aria-label='Copy Email Address'
-                        onClick={() => {
-                            navigator.clipboard.writeText('devnazarchuk@gmail.com');
-                            alert('Email copied to clipboard!');
-                        }}
-                        className='text-muted hover:text-text-primary'
-                    >
-                        <MdEmail size='2em' />
-                    </button>
-                    <button
-                        onClick={toggleTheme}
-                        className='text-muted hover:text-text-primary'
-                        aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
-                    >
-                        {theme === 'dark' ? <FiSun size='2em' /> : <FiMoon size='2em' />}
-                    </button>
-                    <button
-                        onClick={toggleLanguage}
-                        className='text-muted hover:text-text-primary'
-                        aria-label={`Switch to ${language === 'en' ? 'German' : 'English'}`}
-                    >
-                        <FiGlobe size='2em' />
-                    </button>
+                    <SocialButtons />
                 </motion.div>
             </div>
+
+            {/* Mobile Initial Section */}
+            <div className='lg:hidden pt-20 pb-10'>
+                <motion.div
+                    custom={1}
+                    variants={textAnimation}
+                    initial='hidden'
+                    whileInView='visible'
+                    className='text-center'
+                >
+                    <h1 className='text-text-primary font-bold text-4xl mb-4'>{t.title}</h1>
+                    <p className='text-text-primary text-xl mb-4'>{t.subtitle}</p>
+                    <p className='text-muted mb-8'>{t.description}</p>
+                    <nav className='flex flex-col gap-4 mb-8'>
+                        <NavigationLinks />
+                    </nav>
+                    <div className='flex gap-4 justify-center'>
+                        <SocialButtons />
+                    </div>
+                </motion.div>
+            </div>
+
+            {/* Mobile Header */}
+            <AnimatePresence>
+                {isHeaderVisible && (
+                    <motion.header
+                        initial={{ y: -100, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -100, opacity: 0 }}
+                        className='fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-black/80 backdrop-blur-lg border-b border-[#723bf3]/20 dark:border-[#723bf3]/30 lg:hidden'
+                    >
+                        <div className='max-w-7xl mx-auto px-4 py-4'>
+                            <div className='flex justify-between items-center'>
+                                <h1 className='text-text-primary font-bold text-xl max-[425px]:hidden'>{t.title}</h1>
+                                <div className='flex items-center gap-4 max-[425px]:ml-auto'>
+                                    <Link
+                                        href='https://github.com/devnazarchuk'
+                                        target='_blank'
+                                        className='text-muted hover:text-text-primary'
+                                        aria-label='GitHub Profile'
+                                    >
+                                        <AiFillGithub size='1.5em' />
+                                    </Link>
+                                    <button
+                                        aria-label='Copy Email Address'
+                                        onClick={() => {
+                                            navigator.clipboard.writeText('devnazarchuk@gmail.com');
+                                            alert('Email copied to clipboard!');
+                                        }}
+                                        className='text-muted hover:text-text-primary'
+                                    >
+                                        <MdEmail size='1.5em' />
+                                    </button>
+                                    <button
+                                        onClick={toggleTheme}
+                                        className='text-muted hover:text-text-primary'
+                                        aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+                                    >
+                                        {theme === 'dark' ? <FiSun size='1.5em' /> : <FiMoon size='1.5em' />}
+                                    </button>
+                                    <button
+                                        onClick={toggleLanguage}
+                                        className='text-muted hover:text-text-primary'
+                                        aria-label={`Switch to ${language === 'en' ? 'German' : 'English'}`}
+                                    >
+                                        <FiGlobe size='1.5em' />
+                                    </button>
+                                    <button
+                                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                                        className='text-muted hover:text-text-primary p-2'
+                                        aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+                                    >
+                                        {isMobileMenuOpen ? <FiX size='1.5em' /> : <FiMenu size='1.5em' />}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.header>
+                )}
+            </AnimatePresence>
+
+            {/* Mobile Menu */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        className='fixed top-[60px] left-0 right-0 z-40 bg-white/80 dark:bg-black/80 backdrop-blur-lg border-b border-[#723bf3]/20 dark:border-[#723bf3]/30 lg:hidden'
+                    >
+                        <div className='max-w-7xl mx-auto px-4 py-4'>
+                            <nav className='flex flex-col gap-4 mt-4'>
+                                <NavigationLinks />
+                                <div className='border-t border-[#723bf3]/20 dark:border-[#723bf3]/30 my-2 pt-4'>
+                                    <Link
+                                        href='https://www.linkedin.com/in/devnazarchuk/'
+                                        target='_blank'
+                                        className='flex items-center gap-2 text-muted hover:text-text-primary'
+                                    >
+                                        <AiFillLinkedin size='1.5em' />
+                                        <span>Visit LinkedIn</span>
+                                    </Link>
+                                    <Link
+                                        href='/artem_nazarchuk_resume.pdf'
+                                        target='_blank'
+                                        className='flex items-center gap-2 text-muted hover:text-text-primary mt-4'
+                                    >
+                                        <FiDownload size='1.5em' />
+                                        <span>Download Resume</span>
+                                    </Link>
+                                </div>
+                            </nav>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             <div className='w-80 h-80 opacity-60 rounded-full bg-[#723bf3] shadow-2xl shadow-[#723bf3] fixed top-0 left-0 pointer-events-none -z-10 blur-3xl'></div>
             <div className='w-80 h-80 opacity-60 rounded-full bg-[#723bf3] shadow-2xl shadow-[#723bf3] fixed bottom-0 right-0 pointer-events-none -z-10 blur-3xl'></div>
 
             <div className='pl-[600px] max-xl:pl-[500px] max-lg:pl-0'>
-                <motion.div
-                    variants={blockAnimation}
-                    initial='hidden'
-                    whileInView='visible'
-                    ref={about}
-                    className='pt-40'
-                >
-                    <h2 className='text-[#723bf3] dark:text-[#723bf3] text-4xl font-bold uppercase text-center'>{t.about.title}</h2>
-                    <p className='text-slate-600 dark:text-slate-300 text-md pt-10'>
-                        {t.about.paragraph1}
-                    </p>
-                    <p className='text-slate-600 dark:text-slate-300 text-md pt-6'>
-                        {t.about.paragraph2}
-                    </p>
-                    <div className='flex justify-center mt-8'>
-                        <div className="relative group">
-                            <div className="flex">
-                                <Link
-                                    href={language === 'en' ? '/artem_nazarchuk_resume.pdf' : '/artem_nazarchuk_resume_de.pdf'}
-                                    target='_blank'
-                                    className='inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-6 py-3 rounded-l-lg transition-colors duration-200'
-                                    aria-label={language === 'en' ? 'Download Resume' : 'Lebenslauf herunterladen'}
-                                >
-                                    <FiDownload size='1.5em' />
-                                    <span>{language === 'en' ? 'Download Resume' : 'Lebenslauf herunterladen'}</span>
-                                </Link>
-                                <button
-                                    onClick={(e) => e.preventDefault()}
-                                    className='inline-flex items-center justify-center bg-accent hover:bg-accent-hover text-white px-3 py-3 rounded-r-lg transition-colors duration-200 border-l border-white/20'
-                                    aria-label="Select resume version"
-                                >
-                                    <svg 
-                                        className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" 
-                                        fill="none" 
-                                        stroke="currentColor" 
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                    </svg>
-                                </button>
-                            </div>
-                            <div className="absolute left-0 right-0 mt-2 rounded-lg bg-card-bg border border-accent/20 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                                <Link
-                                    href="/artem_nazarchuk_resume.pdf"
-                                    target='_blank'
-                                    className='block px-4 py-3 text-text-primary hover:bg-accent/10 transition-colors duration-200'
-                                >
-                                    English Version
-                                </Link>
-                                <Link
-                                    href="/artem_nazarchuk_resume_de.pdf"
-                                    target='_blank'
-                                    className='block px-4 py-3 text-text-primary hover:bg-accent/10 transition-colors duration-200'
-                                >
-                                    Deutsche Version
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </motion.div>
-                <motion.div
-                    variants={blockAnimation}
-                    initial='hidden'
-                    whileInView='visible'
-                    className='flex flex-col gap-5 pt-44'
-                    ref={experience}
-                >
-                    <h2 className='text-[#723bf3] dark:text-[#723bf3] text-4xl font-bold uppercase text-center'>{t.experience.title}</h2>
-                    <div className='flex flex-col gap-10'>
-                    {experienceData.map((experience) => (
-                            <ExperienceCard
-                                key={experience.key}
-                                itemKey={experience.key}
-                                company={experience.company}
-                                period={experience.period}
-                            />
-                    ))}
-                    </div>
-                </motion.div>
-                <motion.div
-                    variants={blockAnimation}
-                    initial='hidden'
-                    whileInView='visible'
-                    className='pt-44 pb-16'
-                    ref={projects}
-                >
-                    <h2 className='text-[#723bf3] dark:text-[#723bf3] text-4xl font-bold uppercase text-center'>{t.projects.title}</h2>
-                    <div className='flex flex-col gap-10 pt-10'>
-                        {projectsData.map((project) => (
-                            <ProjectCard
-                                key={project.key}
-                                itemKey={project.key}
-                                github={project.github}
-                                live={project.live}
-                            />
-                        ))}
-                    </div>
-                    <div className='pt-10 text-center'>
-                        <a
-                            className='text-[#723bf3] text-2xl hover:text-[#723bf3]/80 hover:underline'
-                            href='https://github.com/devnazarchuk?tab=repositories'
-                        >
-                            {t.projects.more}
-                        </a>
-                    </div>
-                </motion.div>
-                <motion.div
-                    variants={blockAnimation}
-                    initial='hidden'
-                    whileInView='visible'
-                    className='pt-44 pb-16 flex flex-col items-center'
-                    ref={contact}
-                >
-                    <h2 className='text-[#723bf3] dark:text-[#723bf3] text-4xl font-bold uppercase text-center'>{t.contact.title}</h2>
-                    <p className='text-slate-600 dark:text-slate-300 text-md pt-6 text-center'>
-                        {t.contact.subtitle}
-                    </p>
-                    <ContactForm className='mt-10' />
-                </motion.div>
+                <div id="about" ref={about}>
+                    <About />
+                </div>
+                <div id="skills" ref={skills}>
+                    <Skills />
+                </div>
+                <div id="experience" ref={experience}>
+                    <Experience />
+                </div>
+                <div id="projects" ref={projects}>
+                    <Projects />
+                </div>
+                <div id="contact" ref={contact}>
+                    <Contact />
+                </div>
             </div>
         </div>
     );

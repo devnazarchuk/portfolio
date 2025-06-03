@@ -1,18 +1,127 @@
 {
     "title": "Artem Nazarchuk",
     "subtitle": "Frontend Developer",
-    "description": "I build fast, scalable, and accessible web applications using React, Next.js, and TypeScript. Passionate about clean code, user-centric design, and continuous learning.",
+    "description": "I develop fast, scalable, and accessible web applications using React, Next.js, and TypeScript. Passionate about clean code, user-centered design, and continuous learning.",
     "nav": {
         "about": "about",
+        "skills": "skills",
         "experience": "experience",
         "projects": "projects",
         "contact": "contact"
     },
     "about": {
-        "title": "About me",
-        "paragraph1": "Since 2022, I have been deeply engaged in frontend development, starting from HTML and CSS fundamentals and advancing to modern JavaScript frameworks. I enjoy solving complex UI challenges and optimizing performance and accessibility.",
-        "paragraph2": "Currently, I am a Computer Science student and a freelance developer, working on real-world projects that emphasize scalability, reusability, and multilingual support. I aim to collaborate on impactful projects and grow as a developer.",
+        "title": "About Me",
+        "paragraph1": "Since 2022, I've been deeply involved in frontend development, starting from HTML and CSS basics to modern JavaScript frameworks. I enjoy solving complex UI challenges and optimizing performance and accessibility.",
+        "paragraph2": "Currently, I'm a computer science student and freelance developer, working on real projects that emphasize scalability, reusability, and multilingual support. I aim to contribute to impactful projects and grow as a developer.",
         "downloadResume": "Download Resume"
+    },
+    "skills": {
+        "title": "Tech Stack & Tools",
+        "subtitle": "Here's a categorized overview of my current development toolkit. Skills marked with * are actively being learned or deepened.",
+        "coreTechnologies": "Core Technologies",
+        "viewLearningJourney": "View Learning Journey",
+        "hideLearningJourney": "Hide Timeline",
+        "viewAllTechnologies": "View All Technologies",
+        "hideAllTechnologies": "Hide All Technologies",
+        "stages": {
+            "foundations": {
+                "title": "Foundations & Web Basics",
+                "date": "Sep 2022 – Dec 2022",
+                "technologies": {
+                    "HTML5": "HTML5",
+                    "CSS3": "CSS3",
+                    "JavaScript": "JavaScript",
+                    "Git": "Git",
+                    "Figma": "Figma"
+                }
+            },
+            "uiux": {
+                "title": "UI/UX & Styling Systems",
+                "date": "Jan 2023 – May 2023",
+                "technologies": {
+                    "Sass": "Sass",
+                    "Tailwind CSS": "Tailwind CSS",
+                    "Prettier": "Prettier",
+                    "ESLint": "ESLint",
+                    "Framer Motion": "Framer Motion"
+                }
+            },
+            "react": {
+                "title": "React Ecosystem & Dynamic Frontend",
+                "date": "Jun 2023 – Nov 2023",
+                "technologies": {
+                    "React": "React",
+                    "npm": "npm",
+                    "yarn": "yarn",
+                    "Zustand": "Zustand",
+                    "React Router": "React Router",
+                    "Context API": "Context API",
+                    "Custom Hooks": "Custom Hooks"
+                }
+            },
+            "nextjs": {
+                "title": "Next.js & Full-Stack Integration",
+                "date": "Dec 2023 – Mar 2024",
+                "technologies": {
+                    "Next.js": "Next.js",
+                    "TypeScript": "TypeScript",
+                    "i18n": "i18n",
+                    "Vercel": "Vercel",
+                    "SEO": "SEO",
+                    "Next Image": "Next Image",
+                    "Form Handling": "Form Handling",
+                    "Radix UI": "Radix UI"
+                }
+            },
+            "learning": {
+                "title": "Currently Learning",
+                "date": "Apr 2024 – Present",
+                "technologies": {
+                    "TypeScript": "TypeScript",
+                    "Express": "Express",
+                    "REST API": "REST API",
+                    "JWT": "JWT",
+                    "PostgreSQL": "PostgreSQL",
+                    "Prisma": "Prisma",
+                    "MongoDB": "MongoDB",
+                    "Strapi": "Strapi",
+                    "Sanity": "Sanity",
+                    "React Native": "React Native",
+                    "Expo": "Expo",
+                    "Firebase": "Firebase",
+                    "Webpack": "Webpack",
+                    "Husky": "Husky",
+                    "TurboRepo": "TurboRepo"
+                }
+            }
+        },
+        "categories": {
+            "frontend": {
+                "title": "Frontend",
+                "description": "Core frontend technologies and frameworks"
+            },
+            "backend": {
+                "title": "Backend & APIs",
+                "description": "Server-side and API development"
+            },
+            "databases": {
+                "title": "Databases & ORM",
+                "description": "Data storage and management"
+            },
+            "cms": {
+                "title": "CMS & Content",
+                "description": "Content management systems"
+            },
+            "mobile": {
+                "title": "Mobile & Cross-Platform",
+                "description": "Mobile and cross-platform development"
+            },
+            "tooling": {
+                "title": "Tooling & DevOps",
+                "description": "Development tools and practices"
+            }
+        },
+        "learningNote": "* Technologies marked with an asterisk are currently being learned or improved as part of my full-stack development roadmap."
     },
     "experience": {
         "title": "Experience",
@@ -20,7 +129,7 @@
             "depity": {
                 "title": "Frontend Developer Intern",
                 "company": "Depity — Personal MVP / Simulated Internship",
-                "period": "Dec 2022 – Sep 2023",
+                "period": "2022 - 2023",
                 "description": [
                     "Developed and deployed a full MVP HR platform for onboarding and role-based access control",
                     "Built reusable, mobile-first UIs using React.js, Next.js (App Router), Tailwind CSS",
@@ -28,60 +137,69 @@
                     "Boosted performance using lazy loading, code splitting, and optimized image handling",
                     "Simulated Agile workflows: standups, sprints, PR reviews, and retrospectives",
                     "Deployed to Vercel with routing, state management, and production-level UX"
-                ]
+                ],
+                "tech": ["React", "Next.js", "Tailwind CSS", "Accessibility", "Performance", "i18n", "Agile", "Vercel"]
             },
             "freelance": {
                 "title": "Web Developer",
-                "company": "Freelancer & Indie Developer",
-                "period": "Jul 2022 – Present",
+                "company": "Freelance",
+                "period": "2022 - Present",
                 "description": [
                     "Built and deployed full-stack applications using React.js, Next.js, Tailwind CSS, Zustand, and Vercel",
                     "Delivered responsive, performant, and accessible interfaces with scalable architecture",
-                    "Key projects include:",
-                    "• Bakery Website Clone – multilingual MVP with RBAC and animation",
-                    "• Sneaker Store (beta stage) – e-commerce with CMS, cart, filters, Stripe",
-                    "• Task Manager App (in development) – with Pomodoro timer, urgency filters, and analytics",
-                    "• Banking App (mobile prototype) – Monobank-style UI with React Native, Firebase, and Tailwind (auth, stories, gradients, date formatting)",
-                    "• Kids' Language Platform (planned) – gamified lessons for German"
-                ]
+                    "Developed web applications for clients using React, Next.js, and TypeScript",
+                    "Implemented responsive designs with Tailwind CSS",
+                    "Integrated APIs and backend services",
+                    "Optimized application performance and SEO"
+                ],
+                "tech": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Responsive", "Performance", "SEO", "Vercel"]
             }
         }
     },
     "projects": {
         "title": "Projects",
-        "more": "More of my projects",
+        "subtitle": "A selection of my work",
+        "viewProject": "Show Live",
+        "viewCode": "GitHub",
         "items": {
             "depity": {
-                "title": "Depity Team Onboarding & Task Management",
-                "description": [
-                    "A web platform for team onboarding, task assignment, progress tracking, and file management",
-                    "Designed to streamline team collaboration and improve workflow efficiency",
-                    "Built with React and modern state management"
-                ],
-                "technologies": ["React", "State Management", "Responsive Design"]
+                "title": "📦 Depity — Team Onboarding & Task Management",
+                "description": "A task management platform built for teams. Includes onboarding flows, task tracking, file handling, and productivity analytics.",
+                "tech": "React • Zustand • Tailwind CSS • Git • Responsive UI",
+                "achievements": [
+                    "Custom dashboard interface with drag-and-drop support",
+                    "Global state handled via Zustand",
+                    "Mobile-first responsive design",
+                    "Clean and intuitive UX with accessibility support (ARIA)"
+                ]
             },
-            "taskManager": {
-                "title": "Task Manager with Pomodoro",
-                "description": [
-                    "Productivity app with task management and Pomodoro timer",
-                    "Features analytics and progress tracking",
-                    "Built with React and Firebase"
-                ],
-                "technologies": ["React", "Firebase", "Analytics"]
+            "sneakers": {
+                "title": "👟 React Sneakers — E-Commerce Store",
+                "description": "An interactive sneaker store clone showcasing routing, search, cart, wishlist, and product filtering.",
+                "tech": "ReactJS • React Router • SCSS • Axios • Context API • Skeleton UI",
+                "achievements": [
+                    "Global state via Context API",
+                    "Axios for REST API communication",
+                    "Skeleton loading and custom hooks",
+                    "Responsive design & filtering system"
+                ]
             },
-            "datingApp": {
-                "title": "Real-time Dating App",
-                "description": [
-                    "Dating platform with real-time chat and video calls",
-                    "Features user matching and profile management",
-                    "Built with React and WebRTC"
+            "pappert": {
+                "title": "🍞 Pappert Bakery Website — Modern Redesign",
+                "description": "A fully responsive redesign of a real bakery website with role-based content (Client / Employee) and dynamic architecture.",
+                "tech": "Next.js • Tailwind CSS • Framer Motion • next-intl • SEO • ARIA",
+                "achievements": [
+                    "Animated UI with category slider",
+                    "i18n support and light/dark theme",
+                    "Optimized performance (code-splitting, lazy loading, image optimization)",
+                    "WCAG-compliant accessibility and SEO markup"
                 ],
-                "technologies": ["React", "WebRTC", "Real-time"]
+                "note": "🧪 Built fully independently from scratch."
             }
         }
     },
     "contact": {
-        "title": "Contact Me",
+        "title": "Contact",
         "subtitle": "Feel free to reach out for collaborations or questions! 📩",
         "form": {
             "name": "Name",
@@ -91,7 +209,7 @@
             "subject": "Subject",
             "subjectPlaceholder": "Project Collaboration",
             "message": "Message",
-            "messagePlaceholder": "Hello! I would like to discuss...",
+            "messagePlaceholder": "Hello! I'd like to discuss...",
             "send": "Send Message 🚀",
             "sending": "Sending..."
         }

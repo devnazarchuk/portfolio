@@ -4,52 +4,84 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import enMessages from '../../messages/en.json';
 import deMessages from '../../messages/de.json';
+import { FaReact, FaNodeJs, FaGitAlt, FaSass, FaMobile, FaSearch, FaShoppingCart, FaHeart, FaDatabase } from 'react-icons/fa';
+import { SiTypescript, SiTailwindcss, SiNextdotjs, SiAxios, SiFramer, SiVercel, SiReactrouter } from 'react-icons/si';
+import { BiStore, BiCodeAlt, BiGlobe, BiMobileAlt, BiFilterAlt, BiLayer } from 'react-icons/bi';
+import { MdOutlineSpeed, MdOutlineAccessibility, MdOutlineTranslate, MdOutlineWork, MdOutlineSchool } from 'react-icons/md';
 
 const messages = {
     en: enMessages,
     de: deMessages
 };
 
-type ExperienceKey = keyof typeof messages.en.experience.items;
-
-interface ExperienceCardProps {
-    itemKey: ExperienceKey;
+interface ExperienceItem {
+    title: string;
     company: string;
     period: string;
+    description: string[];
+    tech: string[];
 }
 
-export function ExperienceCard({ itemKey, company, period }: ExperienceCardProps) {
-    const { language } = useLanguage();
-    const t = messages[language].experience.items[itemKey];
+const techIcons: Record<string, React.ReactNode> = {
+    'React': <FaReact className="text-[#61DAFB]" />,
+    'Next.js': <SiNextdotjs className="text-[#000000]" />,
+    'TypeScript': <SiTypescript className="text-[#3178C6]" />,
+    'Tailwind CSS': <SiTailwindcss className="text-[#06B6D4]" />,
+    'Zustand': <BiStore className="text-[#764ABC]" />,
+    'Vercel': <SiVercel className="text-[#000000]" />,
+    'Accessibility': <MdOutlineAccessibility className="text-[#4A90E2]" />,
+    'Barrierefreiheit': <MdOutlineAccessibility className="text-[#4A90E2]" />,
+    'Performance': <MdOutlineSpeed className="text-[#4CAF50]" />,
+    'i18n': <MdOutlineTranslate className="text-[#4A90E2]" />,
+    'Agile': <MdOutlineWork className="text-[#4A90E2]" />,
+    'Responsive': <FaMobile className="text-[#4A90E2]" />,
+    'SEO': <BiGlobe className="text-[#4A90E2]" />
+};
 
-    const [startYear, endYear] = period.split(' - ');
+interface ExperienceCardProps {
+    title: string;
+    company: string;
+    period: string;
+    description: string[];
+    tech: string[];
+}
+
+export function ExperienceCard({ title, company, period, description, tech }: ExperienceCardProps) {
+    const { language } = useLanguage();
+    const t = messages[language].experience.items;
+
+    const currentItem = Object.values(t).find(item => item.title === title);
+    const translatedTitle = currentItem?.title || title;
+    const translatedCompany = currentItem?.company || company;
+    const translatedPeriod = currentItem?.period || period;
+    const translatedDescription = currentItem?.description || description;
+    const translatedTech = currentItem?.tech || tech;
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className='bg-[#723bf3]/10 dark:bg-[#723bf3]/20 backdrop-blur-lg p-6 rounded-2xl shadow-lg border border-[#723bf3]/20 dark:border-[#723bf3]/30 hover:border-[#723bf3]/40 dark:hover:border-[#723bf3]/50 transition-colors duration-300 max-w-3xl mx-auto w-full'
-        >
-            <div className='flex justify-between items-start gap-4'>
-                <div className='flex-1 min-w-0'>
-                    <h3 className='text-slate-800 dark:text-slate-50 text-2xl font-bold break-words'>{t.title}</h3>
-                    <p className='text-slate-600 dark:text-slate-200 text-lg mt-1 break-words'>{company}</p>
+        <div className="bg-white/20 dark:bg-black/20 backdrop-blur-sm border border-[#723bf3]/30 dark:border-[#723bf3]/40 p-6 rounded-xl shadow-lg">
+            <div className="flex justify-between items-start mb-4 max-[425px]:flex-col max-[425px]:gap-2">
+                <div>
+                    <h3 className="text-xl font-bold text-slate-800 dark:text-white">{translatedTitle}</h3>
+                    <p className="text-slate-600 dark:text-slate-400">{translatedCompany}</p>
                 </div>
-                <div className='text-[#723bf3] font-medium'>
-                    <span className='hidden sm:inline whitespace-nowrap'>{period}</span>
-                    <div className='sm:hidden flex flex-col items-end'>
-                        <span>{startYear}</span>
-                        <span className='text-[#723bf3]/50'>-</span>
-                        <span>{endYear}</span>
-                    </div>
-                </div>
+                <span className="text-sm font-semibold text-slate-600 dark:text-slate-300 max-[425px]:ml-0">{translatedPeriod}</span>
             </div>
-            <ul className='text-slate-600 dark:text-slate-200 text-md pt-4 list-disc list-inside space-y-2'>
-                {t.description.map((item: string, index: number) => (
-                    <li key={index} className='hover:text-slate-800 dark:hover:text-slate-50 transition-colors duration-200 break-words'>{item}</li>
-                    ))}
-                </ul>
-        </motion.div>
+            <ul className="list-disc list-inside space-y-2 mb-4">
+                {translatedDescription.map((item, index) => (
+                    <li key={index} className="text-slate-700 dark:text-slate-300">{item}</li>
+                ))}
+            </ul>
+            <div className="flex flex-wrap gap-2">
+                {translatedTech.map((item) => (
+                    <span
+                        key={item}
+                        className="bg-[#723bf3]/10 dark:bg-[#723bf3]/20 backdrop-blur-sm border border-[#723bf3]/30 dark:border-[#723bf3]/40 text-[#723bf3] dark:text-[#723bf3] px-3 py-1.5 rounded-full text-sm font-medium flex items-center gap-1.5"
+                    >
+                        {techIcons[item] || null}
+                        {item}
+                    </span>
+                ))}
+            </div>
+        </div>
     );
 }

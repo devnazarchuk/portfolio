@@ -174,7 +174,7 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             onSubmit={handleSubmit}
-            className={`w-full max-w-lg bg-card-bg p-6 rounded-lg shadow-lg ${className}`}
+            className={`w-full max-w-lg bg-card/95 dark:bg-card/95 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-[#723bf3]/10 dark:border-[#723bf3]/20 ${className}`}
             noValidate
         >
             <div className='flex flex-col gap-4'>
@@ -189,7 +189,7 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className='w-full p-3 bg-background text-text-primary rounded-lg outline-none focus:ring-2 focus:ring-accent'
+                        className='w-full p-3 bg-card-bg/50 dark:bg-[#1a1a1a] text-text-primary rounded-lg outline-none focus:ring-2 focus:ring-accent bg-[#723bf3]/5 dark:bg-[#723bf3]/10'
                         aria-label={t.form.name}
                         placeholder={t.form.namePlaceholder}
                     />
@@ -206,7 +206,7 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className='w-full p-3 bg-background text-text-primary rounded-lg outline-none focus:ring-2 focus:ring-accent'
+                        className='w-full p-3 bg-card-bg/50 dark:bg-[#1a1a1a] text-text-primary rounded-lg outline-none focus:ring-2 focus:ring-accent bg-[#723bf3]/5 dark:bg-[#723bf3]/10'
                         aria-label={t.form.email}
                         placeholder={t.form.emailPlaceholder}
                     />
@@ -223,7 +223,7 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
                         value={formData.title}
                         onChange={handleChange}
                         required
-                        className='w-full p-3 bg-background text-text-primary rounded-lg outline-none focus:ring-2 focus:ring-accent'
+                        className='w-full p-3 bg-card-bg/50 dark:bg-[#1a1a1a] text-text-primary rounded-lg outline-none focus:ring-2 focus:ring-accent bg-[#723bf3]/5 dark:bg-[#723bf3]/10'
                         aria-label={t.form.subject}
                         placeholder={t.form.subjectPlaceholder}
                     />
@@ -240,7 +240,7 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
                         onChange={handleChange}
                         required
                         rows={5}
-                        className='w-full p-3 bg-background text-text-primary rounded-lg outline-none focus:ring-2 focus:ring-accent'
+                        className='w-full p-3 bg-card-bg/50 dark:bg-[#1a1a1a] text-text-primary rounded-lg outline-none focus:ring-2 focus:ring-accent bg-[#723bf3]/5 dark:bg-[#723bf3]/10'
                         aria-label={t.form.message}
                         placeholder={t.form.messagePlaceholder}
                     />

@@ -11,7 +11,7 @@ export const textAnimation = {
 };
 export const blockAnimation = {
     hidden: {
-        x: 100,
+        x: 200,
         opacity: 0,
     },
     visible: (custom: number) => ({

@@ -38,19 +38,4 @@ export const projectsData = [
     }
 ];
 
-export const experienceData = [
-    {
-        id: 1,
-        key: 'depity' as const,
-        company: 'Depity — Personal MVP / Simulated Internship',
-        position: 'Frontend Developer',
-        period: '2022 - 2023'
-    },
-    {
-        id: 2,
-        key: 'freelance' as const,
-        company: 'Freelance',
-        position: 'Frontend Developer',
-        period: '2022 - Present'
-    }
-];
+

@@ -1,9 +1,10 @@
 {
     "title": "Artem Nazarchuk",
-    "subtitle": "Frontend Entwickler",
+    "subtitle": "Frontend Developer",
     "description": "Ich entwickle schnelle, skalierbare und zugängliche Webanwendungen mit React, Next.js und TypeScript. Leidenschaftlich für sauberen Code, nutzerzentriertes Design und kontinuierliches Lernen.",
     "nav": {
         "about": "über mich",
+        "skills": "fähigkeiten",
         "experience": "erfahrung",
         "projects": "projekte",
         "contact": "kontakt"
@@ -14,69 +15,186 @@
         "paragraph2": "Aktuell bin ich Informatikstudent und freiberuflicher Entwickler und arbeite an realen Projekten, die Skalierbarkeit, Wiederverwendbarkeit und mehrsprachige Unterstützung betonen. Ich strebe danach, an wirkungsvollen Projekten mitzuarbeiten und mich als Entwickler weiterzuentwickeln.",
         "downloadResume": "Lebenslauf herunterladen"
     },
+    "skills": {
+        "title": "Tech Stack & Tools",
+        "subtitle": "Hier ist eine kategorisierte Übersicht meines aktuellen Entwicklungstoolkits. Mit * markierte Fähigkeiten werden aktiv gelernt oder vertieft.",
+        "coreTechnologies": "Kern-Technologien",
+        "viewLearningJourney": "Lernreise anzeigen",
+        "hideLearningJourney": "Timeline ausblenden",
+        "viewAllTechnologies": "Alle Technologien anzeigen",
+        "hideAllTechnologies": "Alle Technologien ausblenden",
+        "stages": {
+            "foundations": {
+                "title": "Grundlagen & Web-Basics",
+                "date": "Sep 2022 – Dez 2022",
+                "technologies": {
+                    "HTML5": "HTML5",
+                    "CSS3": "CSS3",
+                    "JavaScript": "JavaScript",
+                    "Git": "Git",
+                    "Figma": "Figma"
+                }
+            },
+            "uiux": {
+                "title": "UI/UX & Styling-Systeme",
+                "date": "Jan 2023 – Mai 2023",
+                "technologies": {
+                    "Sass": "Sass",
+                    "Tailwind CSS": "Tailwind CSS",
+                    "Prettier": "Prettier",
+                    "ESLint": "ESLint",
+                    "Framer Motion": "Framer Motion"
+                }
+            },
+            "react": {
+                "title": "React-Ökosystem & Dynamisches Frontend",
+                "date": "Jun 2023 – Nov 2023",
+                "technologies": {
+                    "React": "React",
+                    "npm": "npm",
+                    "yarn": "yarn",
+                    "Zustand": "Zustand",
+                    "React Router": "React Router",
+                    "Context API": "Context API",
+                    "Custom Hooks": "Custom Hooks"
+                }
+            },
+            "nextjs": {
+                "title": "Next.js & Full-Stack-Integration",
+                "date": "Dez 2023 – Mär 2024",
+                "technologies": {
+                    "Next.js": "Next.js",
+                    "TypeScript": "TypeScript",
+                    "i18n": "i18n",
+                    "Vercel": "Vercel",
+                    "SEO": "SEO",
+                    "Next Image": "Next Image",
+                    "Form Handling": "Formularverarbeitung",
+                    "Radix UI": "Radix UI"
+                }
+            },
+            "learning": {
+                "title": "Aktuell im Lernen",
+                "date": "Apr 2024 – Gegenwart",
+                "technologies": {
+                    "TypeScript": "TypeScript",
+                    "Express": "Express",
+                    "REST API": "REST API",
+                    "JWT": "JWT",
+                    "PostgreSQL": "PostgreSQL",
+                    "Prisma": "Prisma",
+                    "MongoDB": "MongoDB",
+                    "Strapi": "Strapi",
+                    "Sanity": "Sanity",
+                    "React Native": "React Native",
+                    "Expo": "Expo",
+                    "Firebase": "Firebase",
+                    "Webpack": "Webpack",
+                    "Husky": "Husky",
+                    "TurboRepo": "TurboRepo"
+                }
+            }
+        },
+        "categories": {
+            "frontend": {
+                "title": "Frontend",
+                "description": "Kern-Frontend-Technologien und Frameworks"
+            },
+            "backend": {
+                "title": "Backend & APIs",
+                "description": "Server-seitige und API-Entwicklung"
+            },
+            "databases": {
+                "title": "Datenbanken & ORM",
+                "description": "Datenspeicherung und -verwaltung"
+            },
+            "cms": {
+                "title": "CMS & Content",
+                "description": "Content-Management-Systeme"
+            },
+            "mobile": {
+                "title": "Mobile & Cross-Platform",
+                "description": "Mobile und plattformübergreifende Entwicklung"
+            },
+            "tooling": {
+                "title": "Tools & DevOps",
+                "description": "Entwicklungstools und -praktiken"
+            }
+        },
+        "learningNote": "* Mit einem Sternchen markierte Technologien werden derzeit im Rahmen meiner Full-Stack-Entwicklungsroadmap gelernt oder verbessert."
+    },
     "experience": {
-        "title": "Berufserfahrung",
+        "title": "Erfahrung",
         "items": {
             "depity": {
-                "title": "Frontend-Praktikant (Eigeninitiiertes Projekt)",
-                "company": "Depity — Persönliches MVP / Simuliertes Praktikum",
-                "period": "Dez 2022 – Sep 2023",
+                "title": "Frontend Developer Intern",
+                "company": "Depity — Personal MVP / Simulierte Ausbildung",
+                "period": "2022 - 2023",
                 "description": [
-                    "Entwicklung und Deployment eines MVPs für eine HR-Plattform mit Fokus auf Onboarding und rollenbasierter Zugriffskontrolle",
-                    "Erstellung von wiederverwendbaren, mobilen Benutzeroberflächen mit React.js, Next.js (App Router) und Tailwind CSS",
-                    "Integration von ARIA-Standards, Mehrsprachigkeit (next-intl) und Dark-/Light-Modus",
-                    "Performance-Optimierung durch Lazy Loading, Code Splitting und Bildkomprimierung",
-                    "Simulation agiler Arbeitsmethoden: Daily Standups, Sprints, Code Reviews, Retrospektiven",
-                    "Deployment auf Vercel mit produktionsreifer Routing- und State-Architektur"
-                ]
+                    "Entwicklung und Deployment einer vollständigen MVP HR-Plattform für Onboarding und rollenbasierte Zugangskontrolle",
+                    "Erstellung wiederverwendbarer, mobil-optimierter UIs mit React.js, Next.js (App Router), Tailwind CSS",
+                    "Implementierung von ARIA-basierter Barrierefreiheit, Dark/Light Theme Switcher und mehrsprachiger Unterstützung (next-intl)",
+                    "Performance-Optimierung durch Lazy Loading, Code Splitting und optimierte Bildverarbeitung",
+                    "Simulation von Agile-Workflows: Standups, Sprints, PR-Reviews und Retrospektiven",
+                    "Deployment auf Vercel mit Routing, State Management und Produktions-Level UX"
+                ],
+                "tech": ["React", "Next.js", "Tailwind CSS", "Barrierefreiheit", "Performance", "i18n", "Agile", "Vercel"]
             },
             "freelance": {
-                "title": "Webentwickler",
-                "company": "Freelancer & Indie Developer",
-                "period": "Jul 2022 – Heute",
+                "title": "Freelancer & Indie Developer",
+                "company": "Freelance",
+                "period": "2022 - Heute",
                 "description": [
-                    "Entwicklung und Deployment von Full-Stack-Webanwendungen mit React.js, Next.js, Tailwind CSS, Zustand und Vercel",
-                    "Umsetzung responsiver, performanter und barrierefreier Interfaces mit skalierbarer Architektur",
-                    "Wichtige Projekte:",
-                    "• Bäckerei-Website – Multilinguales MVP mit rollenbasiertem Zugriff und Animationen",
-                    "• Sneaker-Shop (Beta-Version) – E-Commerce mit CMS, Warenkorb, Filter und Stripe-Zahlung",
-                    "• Aufgabenmanager-App (in Entwicklung) – mit Pomodoro-Timer, Priorisierung und Analyse",
-                    "• Dating-App-Prototyp (in Arbeit) – Echtzeit-Chat und Videoanrufe",
-                    "• Sprachlernplattform für Kinder (geplant) – Gamifiziertes Lernen auf A1-Niveau"
-                ]
+                    "Entwicklung und Deployment von Full-Stack-Anwendungen mit React.js, Next.js, Tailwind CSS, Zustand und Vercel",
+                    "Erstellung responsiver, performanter und barrierefreier Interfaces mit skalierbarer Architektur",
+                    "Entwicklung von Webanwendungen für Kunden mit React, Next.js und TypeScript",
+                    "Implementierung responsiver Designs mit Tailwind CSS",
+                    "Integration von APIs und Backend-Diensten",
+                    "Optimierung der Anwendungsperformance und SEO"
+                ],
+                "tech": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Zustand", "Responsive", "Performance", "SEO", "Vercel"]
             }
         }
     },
     "projects": {
         "title": "Projekte",
-        "more": "Mehr meiner Projekte",
+        "subtitle": "Eine Auswahl meiner Arbeiten",
+        "viewProject": "Zeigen Live",
+        "viewCode": "GitHub",
         "items": {
             "depity": {
-                "title": "Depity Team Onboarding & Aufgabenverwaltung",
-                "description": [
-                    "Eine Webplattform für Team-Onboarding, Aufgabenvergabe, Fortschrittsverfolgung und Dateiverwaltung",
-                    "Entwickelt zur Optimierung der Teamzusammenarbeit und Verbesserung des Workflows",
-                    "Gebaut mit React und modernem State Management"
-                ],
-                "technologies": ["React", "State Management", "Responsive Design"]
+                "title": "📦 Depity — Team Onboarding & Task Management",
+                "description": "Eine Task-Management-Plattform für Teams. Enthält Onboarding-Prozesse, Aufgabenverfolgung, Dateiverwaltung und Produktivitätsanalysen.",
+                "tech": "React • Zustand • Tailwind CSS • Git • Responsive UI",
+                "achievements": [
+                    "Benutzerdefiniertes Dashboard mit Drag-and-Drop-Unterstützung",
+                    "Globaler State über Zustand",
+                    "Mobile-First responsives Design",
+                    "Sauberes und intuitives UX mit Barrierefreiheit (ARIA)"
+                ]
             },
-            "taskManager": {
-                "title": "Aufgabenmanager mit Pomodoro",
-                "description": [
-                    "Produktivitäts-App mit Aufgabenverwaltung und Pomodoro-Timer",
-                    "Funktionen für Analysen und Fortschrittsverfolgung",
-                    "Gebaut mit React und Firebase"
-                ],
-                "technologies": ["React", "Firebase", "Analytics"]
+            "sneakers": {
+                "title": "👟 React Sneakers — E-Commerce Store",
+                "description": "Ein interaktiver Sneaker-Store mit Routing, Suche, Warenkorb, Wunschliste und Produktfilterung.",
+                "tech": "ReactJS • React Router • SCSS • Axios • Context API • Skeleton UI",
+                "achievements": [
+                    "Globaler State über Context API",
+                    "Axios für REST API-Kommunikation",
+                    "Skeleton Loading und Custom Hooks",
+                    "Responsives Design & Filtersystem"
+                ]
             },
-            "datingApp": {
-                "title": "Echtzeit-Dating-App",
-                "description": [
-                    "Dating-Plattform mit Echtzeit-Chat und Videoanrufen",
-                    "Funktionen für Benutzer-Matching und Profilverwaltung",
-                    "Gebaut mit React und WebRTC"
+            "pappert": {
+                "title": "🍞 Pappert Bakery Website — Modernes Redesign",
+                "description": "Ein vollständig responsives Redesign einer echten Bäckerei-Website mit rollenbasierter Inhaltsdarstellung (Kunde / Mitarbeiter) und dynamischer Architektur.",
+                "tech": "Next.js • Tailwind CSS • Framer Motion • next-intl • SEO • ARIA",
+                "achievements": [
+                    "Animiertes UI mit Kategorie-Slider",
+                    "i18n-Unterstützung und Light/Dark Theme",
+                    "Optimierte Performance (Code-Splitting, Lazy Loading, Bildoptimierung)",
+                    "WCAG-konforme Barrierefreiheit und SEO-Markup"
                 ],
-                "technologies": ["React", "WebRTC", "Echtzeit"]
+                "note": "🧪 Vollständig eigenständig von Grund auf entwickelt."
             }
         }
     },
