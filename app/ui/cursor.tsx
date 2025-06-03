@@ -22,7 +22,7 @@ export function Cursor() {
     return (
         <div
             ref={cursorRef}
-            className='w-96 h-96 bg-fuchsia-400 opacity-20 rounded-full fixed top-0 left-0 pointer-events-none -z-10 blur-3xl'
+            className='w-96 h-96 bg-fuchsia-500 opacity-30 rounded-full fixed top-0 left-0 pointer-events-none -z-10 blur-3xl'
         >
             CustomCursor
         </div>
