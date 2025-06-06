@@ -144,7 +144,7 @@ export default function Home() {
                 <AiFillLinkedin size='2em' />
             </Link>
             <Link
-                href='/artem_nazarchuk_resume.pdf'
+                href='/artem_nazarchuk_resume_eng.pdf'
                 target='_blank'
                 className='text-muted hover:text-text-primary'
                 aria-label='See Resume'
@@ -337,7 +337,7 @@ export default function Home() {
                                         <span>{t.buttons.linkedin}</span>
                                     </Link>
                                     <Link
-                                        href='/artem_nazarchuk_resume.pdf'
+                                        href='/artem_nazarchuk_resume_eng.pdf'
                                         target='_blank'
                                         className='flex items-center gap-2 text-muted hover:text-text-primary mt-4'
                                     >

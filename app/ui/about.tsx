@@ -45,7 +45,7 @@ export function About() {
                 <div className="relative group">
                     <div className="flex">
                         <Link
-                            href={language === 'en' ? '/artem_nazarchuk_resume.pdf' : '/artem_nazarchuk_resume_de.pdf'}
+                            href={language === 'en' ? '/artem_nazarchuk_resume_eng.pdf' : '/artem_nazarchuk_resume_de.pdf'}
                             target='_blank'
                             className='inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white px-6 py-3 rounded-l-lg transition-colors duration-200'
                             aria-label={language === 'en' ? 'Download Resume' : 'Lebenslauf herunterladen'}
@@ -70,7 +70,7 @@ export function About() {
                     </div>
                     <div className="absolute left-0 right-0 mt-2 rounded-lg bg-card-bg border border-accent/20 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                         <Link
-                            href="/artem_nazarchuk_resume.pdf"
+                            href="/artem_nazarchuk_resume_eng.pdf"
                             target='_blank'
                             className='block px-4 py-3 text-text-primary hover:bg-accent/10 transition-colors duration-200'
                         >
