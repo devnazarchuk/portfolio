@@ -1,7 +1,15 @@
-![Lighthouse Metrics](./metrics.png)
-[![Lighthouse Report](https://img.shields.io/badge/Lighthouse%20Report-View%20Full%20Report-blue)](https://lighthouse-metrics.com/lighthouse/checks/4c98d856-a1ff-4e85-8f79-78d247924af2)
+<p align="center">
+   <img src="public/preview.png" alt="Portfolio Preview" width="48%" style="display:inline-block;"/>
+  <img src="public/metrics.png" alt="Lighthouse Metrics" width="48%" style="display:inline-block;"/>
+</p>
 
-![Portfolio Preview](./preview.png)
+<p align="center">
+  <a href="https://lighthouse-metrics.com/lighthouse/checks/4c98d856-a1ff-4e85-8f79-78d247924af2">
+    <img src="https://img.shields.io/badge/Lighthouse%20Report-View%20Full%20Report-blue" alt="Lighthouse Report"/>
+  </a>
+</p>
+
+
 
 # Artem Nazarchuk - Portfolio Website
 
