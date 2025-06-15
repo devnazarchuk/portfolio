@@ -40,30 +40,30 @@ export function Header() {
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between h-20">
                     {/* Left section: Logo */}
-                    <div className="text-2xl font-bold text-[#723bf3]">
+                    <div className="text-2xl font-bold text-[#4B0082]">
                         AN
                     </div>
 
                     {/* Center section: Navigation Links (Desktop) */}
                     <nav className="hidden md:flex items-center gap-8">
-                        <button onClick={() => scrollToSection('about')} className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors">
+                        <button onClick={() => scrollToSection('about')} className="text-[#4B0082] hover:text-[#6A5ACD] transition-colors">
                             {t.about}
                         </button>
-                        <button onClick={() => scrollToSection('skills')} className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors">
+                        <button onClick={() => scrollToSection('skills')} className="text-[#4B0082] hover:text-[#6A5ACD] transition-colors">
                             {t.skills}
                         </button>
-                        <button onClick={() => scrollToSection('experience')} className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors">
+                        <button onClick={() => scrollToSection('experience')} className="text-[#4B0082] hover:text-[#6A5ACD] transition-colors">
                             {t.experience}
                         </button>
-                        <button onClick={() => scrollToSection('projects')} className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors">
+                        <button onClick={() => scrollToSection('projects')} className="text-[#4B0082] hover:text-[#6A5ACD] transition-colors">
                             {t.projects}
                         </button>
-                        <button onClick={() => scrollToSection('contact')} className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors">
+                        <button onClick={() => scrollToSection('contact')} className="text-[#4B0082] hover:text-[#6A5ACD] transition-colors">
                             {t.contact}
                         </button>
                         <button
                             onClick={toggleLanguage}
-                            className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors"
+                            className="text-[#4B0082] hover:text-[#6A5ACD] transition-colors"
                         >
                             {language === 'en' ? 'DE' : 'EN'}
                         </button>
@@ -71,18 +71,18 @@ export function Header() {
 
                     {/* Right section: Social Links & Language Button */}
                     <div className="flex items-center gap-4">
-                        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors">
+                        <a href="https://github.com/devnazarchuk" target="_blank" rel="noopener noreferrer" className="text-[#4B0082] hover:text-[#6A5ACD] transition-colors">
                             <FaGithub size={24} />
                         </a>
-                        <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors">
+                        <a href="https://linkedin.com/in/devnazarchuk" target="_blank" rel="noopener noreferrer" className="text-[#4B0082] hover:text-[#6A5ACD] transition-colors">
                             <FaLinkedin size={24} />
                         </a>
-                        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors">
+                        <a href="/artem_nazarchuk_resume_eng.pdf" target="_blank" rel="noopener noreferrer" className="text-[#4B0082] hover:text-[#6A5ACD] transition-colors">
                             <FaFilePdf size={24} />
                         </a>
                         {/* Mobile Menu Button */}
                         <button
-                            className="md:hidden text-[#723bf3] hover:text-[#723bf3]/80 transition-colors"
+                            className="md:hidden text-[#4B0082] hover:text-[#6A5ACD] transition-colors"
                             onClick={() => setIsOpen(!isOpen)}
                         >
                             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -102,19 +102,19 @@ export function Header() {
                     >
                         <div className="container mx-auto px-4 py-4">
                             <nav className="flex flex-col gap-4">
-                                <button onClick={() => scrollToSection('about')} className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors">
+                                <button onClick={() => scrollToSection('about')} className="text-[#4B0082] hover:text-[#6A5ACD] transition-colors">
                                     {t.about}
                                 </button>
-                                <button onClick={() => scrollToSection('skills')} className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors">
+                                <button onClick={() => scrollToSection('skills')} className="text-[#4B0082] hover:text-[#6A5ACD] transition-colors">
                                     {t.skills}
                                 </button>
-                                <button onClick={() => scrollToSection('experience')} className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors">
+                                <button onClick={() => scrollToSection('experience')} className="text-[#4B0082] hover:text-[#6A5ACD] transition-colors">
                                     {t.experience}
                                 </button>
-                                <button onClick={() => scrollToSection('projects')} className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors">
+                                <button onClick={() => scrollToSection('projects')} className="text-[#4B0082] hover:text-[#6A5ACD] transition-colors">
                                     {t.projects}
                                 </button>
-                                <button onClick={() => scrollToSection('contact')} className="text-[#723bf3] hover:text-[#723bf3]/80 transition-colors">
+                                <button onClick={() => scrollToSection('contact')} className="text-[#4B0082] hover:text-[#6A5ACD] transition-colors">
                                     {t.contact}
                                 </button>
                                 <button

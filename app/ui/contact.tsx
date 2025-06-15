@@ -34,7 +34,7 @@ export function Contact() {
             className='pt-44 pb-16 flex flex-col items-center'
         >
             <h2 className='text-[#723bf3] dark:text-[#723bf3] text-4xl font-bold uppercase text-center'>{t.title}</h2>
-            <p className='text-slate-600 dark:text-slate-300 text-md pt-6 text-center'>
+            <p className='text-slate-800 dark:text-slate-200 text-md pt-6 text-center'>
                 {t.subtitle}
             </p>
             <ContactForm className='mt-10' />
