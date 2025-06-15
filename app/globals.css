@@ -5,26 +5,26 @@
 :root {
     --background: #F7FAFC;
     --text-primary: #1A202C;
-    --text-secondary: #94a3b8;
+    --text-secondary: #64748b;
     --accent: #723bf3;
     --accent-hover: #7c3aed;
     --selection-bg: #8b5cf6;
     --selection-text: #f8fafc;
     --card: #FFFFFF;
-    --muted: #4A5568;
+    --muted: #2D3748;
     --card-bg: #F1F5F9;
 }
 
 .dark {
     --background: #0F172A;
     --text-primary: #F8FAFC;
-    --text-secondary: #94a3b8;
+    --text-secondary: #cbd5e1;
     --accent: #8b5cf6;
     --accent-hover: #7c3aed;
     --selection-bg: #8b5cf6;
     --selection-text: #f8fafc;
     --card: #1E293B;
-    --muted: #94A3B8;
+    --muted: #e2e8f0;
     --card-bg: #1E293B;
 }
 

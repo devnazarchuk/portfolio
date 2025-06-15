@@ -7,17 +7,19 @@ import { AiFillFilePdf, AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';
 import { FiMoon, FiSun, FiGlobe, FiDownload, FiMenu, FiX } from 'react-icons/fi';
 import { textAnimation } from './lib/animation';
-import { Cursor } from './ui/cursor';
 import { Link as UiLink } from './ui/link';
 import { useTheme } from './context/ThemeContext';
 import { useLanguage } from './context/LanguageContext';
 import enMessages from '../messages/en.json';
 import deMessages from '../messages/de.json';
-import { Projects } from './ui/projects';
-import { Skills } from './ui/skills';
-import { About } from './ui/about';
-import { Experience } from './ui/experience';
-import { Contact } from './ui/contact';
+import dynamic from 'next/dynamic';
+
+const Cursor = dynamic(() => import('./ui/cursor').then(mod => mod.Cursor), { ssr: false });
+const About = dynamic(() => import('./ui/about').then(mod => mod.About));
+const Skills = dynamic(() => import('./ui/skills').then(mod => mod.Skills));
+const Experience = dynamic(() => import('./ui/experience').then(mod => mod.Experience));
+const Projects = dynamic(() => import('./ui/projects').then(mod => mod.Projects));
+const Contact = dynamic(() => import('./ui/contact').then(mod => mod.Contact));
 
 const messages = {
     en: enMessages,

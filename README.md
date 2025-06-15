@@ -1,120 +1,200 @@
 # Artem Nazarchuk - Portfolio Website
 
-A modern, responsive portfolio website built with Next.js 13+ and TypeScript, showcasing my work as a Frontend Developer.
+A modern, responsive portfolio website built with Next.js 14, showcasing my work as a Frontend Developer. The site features a beautiful UI with smooth animations, dark/light theme support, and multilingual capabilities (English/German).
 
-![Portfolio Preview](public/preview.png)
+## 🌟 Features
 
-## 🚀 Features
+### Core Features
+- **Modern Tech Stack**
+  - Next.js 14 with App Router
+  - TypeScript for type safety
+  - Tailwind CSS for styling
+  - Framer Motion for animations
+  - EmailJS for contact form
 
-- **Modern Design**: Clean and professional UI with smooth animations
-- **Responsive**: Fully responsive design for all devices
-- **Performance**: Optimized for Core Web Vitals
-- **Accessibility**: WCAG compliant with ARIA attributes
-- **Animations**: Smooth transitions using Framer Motion
-- **Contact Form**: Integrated EmailJS for contact form functionality
-- **Dark Theme**: Elegant dark theme with purple accents
+- **User Experience**
+  - Responsive design for all devices
+  - Smooth page transitions
+  - Interactive UI elements
+  - Custom cursor effects
+  - Beautiful gradient backgrounds
+  - Smooth scrolling behavior
+  - Section-based navigation
 
-## 🛠️ Technologies
+- **Internationalization**
+  - Full English/German language support
+  - Language persistence using localStorage
+  - Translated content for all sections
+  - Dynamic language switching
+  - RTL support ready
 
-- **Framework**: [Next.js 13+](https://nextjs.org/) (App Router)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
-- **Email**: [EmailJS](https://www.emailjs.com/)
-- **Deployment**: [Vercel](https://vercel.com/)
+- **Theme Support**
+  - Dark/Light mode
+  - Theme persistence using localStorage
+  - Smooth theme transitions
+  - Custom color scheme
+  - System theme detection
+
+- **Performance & SEO**
+  - Optimized images
+  - Fast page loads
+  - SEO-friendly metadata
+  - Sitemap generation
+  - OpenGraph support
+  - Google verification
+  - Robots.txt configuration
 
 ## 📁 Project Structure
 
 ```
-portfolio/
-├── app/
-│   ├── lib/           # Shared utilities and data
-│   │   ├── animation.ts    # Animation configurations
-│   │   └── data.ts         # Project and experience data
-│   ├── ui/            # Reusable UI components
-│   │   ├── chip.tsx        # Tag/Chip component
-│   │   ├── cursor.tsx      # Custom cursor component
-│   │   ├── experienceCard.tsx  # Experience section card
-│   │   ├── link.tsx        # Navigation link component
-│   │   └── projectCard.tsx # Project showcase card
-│   ├── globals.css    # Global styles
-│   ├── layout.tsx     # Root layout
-│   └── page.tsx       # Main page component
-├── public/            # Static assets
-└── [config files]     # Various configuration files
+app/
+├── api/                    # API routes
+│   └── sitemap/           # Sitemap generation
+│
+├── context/               # React context providers
+│   ├── LanguageContext.tsx    # Language management
+│   └── ThemeContext.tsx       # Theme management
+│
+├── lib/                   # Utility functions
+│   ├── animation.ts          # Animation configurations
+│   └── data.ts              # Project data
+│
+├── messages/              # i18n translations
+│   ├── en.json              # English translations
+│   └── de.json              # German translations
+│
+├── ui/                    # Reusable components
+│   ├── about.tsx            # About section
+│   ├── chip.tsx             # Tag component
+│   ├── contact.tsx          # Contact section
+│   ├── contactForm.tsx      # Contact form
+│   ├── cursor.tsx           # Custom cursor
+│   ├── experience.tsx       # Experience section
+│   ├── experienceCard.tsx   # Experience card
+│   ├── header.tsx           # Navigation header
+│   ├── link.tsx             # Navigation link
+│   ├── projectCard.tsx      # Project card
+│   ├── projects.tsx         # Projects section
+│   ├── skills.tsx           # Skills section
+│   └── skillTimeline.tsx    # Skills timeline
+│
+├── projects/              # Project pages
+│   └── [slug]/            # Dynamic project routes
+│
+├── globals.css            # Global styles
+├── layout.tsx             # Root layout
+└── page.tsx               # Main page
 ```
 
-## 🎨 Design Features
+### Key Components
 
-- **Custom Cursor**: Interactive custom cursor for enhanced UX
-- **Smooth Scrolling**: Native smooth scrolling behavior
-- **Section Navigation**: Sticky navigation with active section highlighting
-- **Card Animations**: Smooth reveal animations for project and experience cards
-- **Gradient Effects**: Subtle gradient backgrounds for visual interest
-- **Responsive Typography**: Optimized text sizes for all screen sizes
+#### UI Components
+- **About Section** (`about.tsx`)
+  - Personal introduction
+  - Resume download options
+  - Language-specific content
+
+- **Contact Section** (`contact.tsx`, `contactForm.tsx`)
+  - EmailJS integration
+  - Form validation
+  - Success/error handling
+  - Loading states
+
+- **Experience Section** (`experience.tsx`, `experienceCard.tsx`)
+  - Work history
+  - Company details
+  - Technology stack
+  - Timeline view
+
+- **Projects Section** (`projects.tsx`, `projectCard.tsx`)
+  - Project showcase
+  - Live demos
+  - GitHub links
+  - Technology tags
+
+- **Skills Section** (`skills.tsx`, `skillTimeline.tsx`)
+  - Technology timeline
+  - Skill categories
+  - Progress visualization
+
+#### Context Providers
+- **Language Context** (`LanguageContext.tsx`)
+  - Language state management
+  - Language switching
+  - Persistence handling
+
+- **Theme Context** (`ThemeContext.tsx`)
+  - Theme state management
+  - Theme switching
+  - System theme detection
 
 ## 🚀 Getting Started
 
-1. **Clone the repository**
+1. Clone the repository:
    ```bash
    git clone https://github.com/devnazarchuk/portfolio.git
-   cd portfolio
    ```
 
-2. **Install dependencies**
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-3. **Set up environment variables**
-   Create a `.env.local` file with:
+3. Create a `.env.local` file with required environment variables:
    ```
-   NEXT_PUBLIC_SERVICE_ID=your_emailjs_service_id
-   NEXT_PUBLIC_TEMPLATE_ID=your_emailjs_template_id
-   NEXT_PUBLIC_PUBLIC_KEY=your_emailjs_public_key
+   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
+   NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
+   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
    ```
 
-4. **Run development server**
+4. Run the development server:
    ```bash
    npm run dev
    ```
 
-5. **Build for production**
-   ```bash
-   npm run build
-   ```
+## 🛠️ Technologies Used
+
+### Frontend
+- **Framework**: Next.js 14
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: React Icons
+- **Email**: EmailJS
+
+### Development & Deployment
+- **Version Control**: Git
+- **Hosting**: Vercel
+- **Package Manager**: npm
+- **Code Quality**: ESLint, Prettier
 
 ## 📱 Responsive Design
 
+The website is fully responsive and optimized for:
+- Desktop (1920px and below)
+- Tablet (1024px and below)
+- Mobile (768px and below)
+- Small Mobile (425px and below)
+
+### Responsive Features
 - Mobile-first approach
-- Breakpoints:
-  - Mobile: < 640px
-  - Tablet: 640px - 1024px
-  - Desktop: > 1024px
+- Fluid typography
+- Adaptive layouts
+- Touch-friendly interactions
+- Optimized images
+- Responsive navigation
 
-## 🎯 Performance Optimizations
+## 🌐 Live Demo
 
-- Image optimization with Next.js
-- Code splitting and lazy loading
-- CSS purging with Tailwind
-- Minimal dependencies
-- Optimized animations
-
-## 🔒 Security
-
-- Environment variables for sensitive data
-- Secure form handling with EmailJS
-- No exposed API keys
-- Protected routes
+Visit the live website at [devnazarchuk.vercel.app](https://devnazarchuk.vercel.app)
 
 ## 📄 License
 
-MIT License - feel free to use this code for your own portfolio!
+This project is open source and available under the [MIT License](LICENSE).
 
 ## 👨‍💻 Author
 
-Artem Nazarchuk
-- GitHub: [@devnazarchuk](https://github.com/devnazarchuk)
-- LinkedIn: [Artem Nazarchuk](https://www.linkedin.com/in/devnazarchuk/)
-- Email: devnazarchuk@gmail.com
+- **Artem Nazarchuk**
+  - GitHub: [@devnazarchuk](https://github.com/devnazarchuk)
+  - LinkedIn: [Artem Nazarchuk](https://www.linkedin.com/in/devnazarchuk/)
+  - Email: devnazarchuk@gmail.com

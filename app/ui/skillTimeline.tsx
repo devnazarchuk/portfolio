@@ -4,12 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { FaReact, FaGitAlt } from 'react-icons/fa';
-import { 
-    SiTypescript, SiNextdotjs, SiTailwindcss, SiFramer, SiJavascript, 
-    SiHtml5, SiCss3, SiGit, SiVercel, SiEslint, SiPrettier, SiNodedotjs, SiExpress, SiPostgresql, SiPrisma, 
-    SiStrapi, SiSanity, SiSass, SiFigma, SiWebpack, SiYarn, 
-    SiMongodb, SiExpo, SiFirebase, SiTurborepo, SiNpm, SiReactrouter, SiAxios
-} from 'react-icons/si';
+import { SiTypescript, SiNextdotjs, SiTailwindcss, SiFramer, SiJavascript, SiHtml5, SiCss3, SiGit, SiVercel, SiEslint, SiPrettier, SiNodedotjs, SiExpress, SiPostgresql, SiPrisma, SiStrapi, SiSanity, SiSass, SiFigma, SiWebpack, SiYarn, SiMongodb, SiExpo, SiFirebase, SiTurborepo, SiNpm, SiReactrouter, SiAxios } from 'react-icons/si';
 import { TbBrandVscode } from 'react-icons/tb';
 import { useLanguage } from '../context/LanguageContext';
 import enMessages from '../../messages/en.json';
