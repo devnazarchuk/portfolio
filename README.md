@@ -1,3 +1,8 @@
+![Lighthouse Metrics](./metrics.png)
+[![Lighthouse Report](https://img.shields.io/badge/Lighthouse%20Report-View%20Full%20Report-blue)](https://lighthouse-metrics.com/lighthouse/checks/4c98d856-a1ff-4e85-8f79-78d247924af2)
+
+![Portfolio Preview](./preview.png)
+
 # Artem Nazarchuk - Portfolio Website
 
 A modern, responsive portfolio website built with Next.js 14, showcasing my work as a Frontend Developer. The site features a beautiful UI with smooth animations, dark/light theme support, and multilingual capabilities (English/German).
