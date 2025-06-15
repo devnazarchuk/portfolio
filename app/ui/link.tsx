@@ -9,7 +9,7 @@ interface LinkProps {
 export function Link({ children, isActive, onClick }: LinkProps) {
     return (
         <div
-            className={`flex items-center gap-2 cursor-pointer group transition-all duration-200 ${isActive ? 'w-36 text-accent' : 'w-24 text-muted hover:text-text-primary'}`}
+            className={`flex items-center gap-2 cursor-pointer group transition-all duration-200 ${isActive ? 'w-36 text-accent' : 'w-24 text-slate-700 hover:text-text-primary'}`}
             onClick={onClick}
         >
             <div className='w-full'>
