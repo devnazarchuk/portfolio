@@ -7,6 +7,7 @@ import { FaReact } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss, SiNextdotjs } from 'react-icons/si';
 import { BiStore, BiGlobe } from 'react-icons/bi';
 import { MdOutlineSpeed, MdOutlineAccessibility, MdOutlineTranslate, MdOutlineWork } from 'react-icons/md';
+import type { ReactNode } from 'react';
 
 const messages = {
     en: enMessages,
@@ -41,7 +42,7 @@ export function ExperienceCard({ title, company, period, description, tech }: Ex
     const { language } = useLanguage();
     const t = messages[language].experience.items;
 
-    const currentItem = Object.values(t).find(item => item.title === title);
+    const currentItem = Object.values(t).find(item => (item as any).title === title) as typeof t[keyof typeof t] | undefined;
     const translatedTitle = currentItem?.title || title;
     const translatedCompany = currentItem?.company || company;
     const translatedPeriod = currentItem?.period || period;
