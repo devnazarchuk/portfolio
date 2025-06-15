@@ -7,7 +7,6 @@ import { FaReact } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss, SiNextdotjs } from 'react-icons/si';
 import { BiStore, BiGlobe } from 'react-icons/bi';
 import { MdOutlineSpeed, MdOutlineAccessibility, MdOutlineTranslate, MdOutlineWork } from 'react-icons/md';
-import type { ReactNode } from 'react';
 
 const messages = {
     en: enMessages,
@@ -42,25 +41,25 @@ export function ExperienceCard({ title, company, period, description, tech }: Ex
     const { language } = useLanguage();
     const t = messages[language].experience.items;
 
-    const currentItem = Object.values(t).find(item => (item as any).title === title) as typeof t[keyof typeof t] | undefined;
+    const currentItem = Object.values(t).find(item => item.title === title);
     const translatedTitle = currentItem?.title || title;
     const translatedCompany = currentItem?.company || company;
     const translatedPeriod = currentItem?.period || period;
-    const translatedDescription: string[] = (currentItem?.description || description) as string[];
+    const translatedDescription = currentItem?.description || description;
     const translatedTech = currentItem?.tech || tech;
 
     return (
         <div className="bg-white/20 dark:bg-black/20 backdrop-blur-sm border border-[#723bf3]/30 dark:border-[#723bf3]/40 p-6 rounded-xl shadow-lg">
             <div className="flex justify-between items-start mb-4 max-[425px]:flex-col max-[425px]:gap-2">
                 <div>
-                    <h3 className="text-xl font-bold text-slate-600 dark:text-white">{translatedTitle}</h3>
-                    <p className="text-slate-600 dark:text-slate-200">{translatedCompany}</p>
+                    <h3 className="text-xl font-bold text-slate-800 dark:text-white">{translatedTitle}</h3>
+                    <p className="text-slate-800 dark:text-slate-200">{translatedCompany}</p>
                 </div>
-                <span className="text-sm font-semibold text-slate-600 dark:text-slate-300 max-[425px]:ml-0">{translatedPeriod}</span>
+                <span className="text-sm font-semibold text-slate-800 dark:text-slate-300 max-[425px]:ml-0">{translatedPeriod}</span>
             </div>
             <ul className="list-disc list-inside space-y-2 mb-4">
                 {translatedDescription.map((item, index) => (
-                    <li key={index} className="text-slate-700 dark:text-slate-200">{item}</li>
+                    <li key={index} className="text-slate-800 dark:text-slate-200">{item}</li>
                 ))}
             </ul>
             <div className="flex flex-wrap gap-2">

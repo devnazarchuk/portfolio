@@ -38,7 +38,7 @@ const projectsData: ProjectData[] = [
     },
     { 
         key: 'sneakers', 
-        github: 'https://github.com/devnazarchuk/sneakers-shop', 
+        github: 'https://github.com/devnazarchuk/react-sneakers-shop', 
         demo: 'https://reactsneakerss.vercel.app/' 
     },
     { 
