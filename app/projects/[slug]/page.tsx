@@ -57,15 +57,15 @@ export default async function ProjectPage({ params }: PageProps) {
     // Default URLs for projects
     const projectUrls = {
         depity: {
-            github: 'https://github.com/yourusername/depity',
+            github: 'https://github.com/devnazarchuk/depity',
             demo: 'https://depity.vercel.app'
         },
         sneakers: {
-            github: 'https://github.com/yourusername/react-sneakers',
-            demo: 'https://react-sneakers.vercel.app'
+            github: 'https://github.com/devnazarchuk/sneakers-shop',
+            demo: 'https://reactsneakerss.vercel.app/'
         },
         pappert: {
-            github: 'https://github.com/yourusername/pappert',
+            github: 'https://github.com/devnazarchuk/pappert',
             demo: 'https://pappert.vercel.app'
         }
     };

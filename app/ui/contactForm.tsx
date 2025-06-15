@@ -179,7 +179,7 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
         >
             <div className='flex flex-col gap-4'>
                 <div>
-                    <label htmlFor='name' className='block text-text-primary mb-2'>
+                    <label htmlFor='name' className='block text-slate-800 dark:text-slate-200 mb-2'>
                         {t.form.name}
                     </label>
                     <input
@@ -189,14 +189,14 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className='w-full p-3 bg-card-bg/50 dark:bg-[#1a1a1a] text-text-primary rounded-lg outline-none focus:ring-2 focus:ring-accent bg-[#723bf3]/5 dark:bg-[#723bf3]/10'
+                        className='w-full p-3 bg-card-bg/50 dark:bg-[#1a1a1a] text-slate-800 dark:text-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-accent bg-[#723bf3]/5 dark:bg-[#723bf3]/10'
                         aria-label={t.form.name}
                         placeholder={t.form.namePlaceholder}
                     />
                 </div>
 
                 <div>
-                    <label htmlFor='email' className='block text-text-primary mb-2'>
+                    <label htmlFor='email' className='block text-slate-800 dark:text-slate-200 mb-2'>
                         {t.form.email}
                     </label>
                     <input
@@ -206,14 +206,14 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className='w-full p-3 bg-card-bg/50 dark:bg-[#1a1a1a] text-text-primary rounded-lg outline-none focus:ring-2 focus:ring-accent bg-[#723bf3]/5 dark:bg-[#723bf3]/10'
+                        className='w-full p-3 bg-card-bg/50 dark:bg-[#1a1a1a] text-slate-800 dark:text-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-accent bg-[#723bf3]/5 dark:bg-[#723bf3]/10'
                         aria-label={t.form.email}
                         placeholder={t.form.emailPlaceholder}
                     />
                 </div>
 
                 <div>
-                    <label htmlFor='title' className='block text-text-primary mb-2'>
+                    <label htmlFor='title' className='block text-slate-800 dark:text-slate-200 mb-2'>
                         {t.form.subject}
                     </label>
                     <input
@@ -223,14 +223,14 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
                         value={formData.title}
                         onChange={handleChange}
                         required
-                        className='w-full p-3 bg-card-bg/50 dark:bg-[#1a1a1a] text-text-primary rounded-lg outline-none focus:ring-2 focus:ring-accent bg-[#723bf3]/5 dark:bg-[#723bf3]/10'
+                        className='w-full p-3 bg-card-bg/50 dark:bg-[#1a1a1a] text-slate-800 dark:text-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-accent bg-[#723bf3]/5 dark:bg-[#723bf3]/10'
                         aria-label={t.form.subject}
                         placeholder={t.form.subjectPlaceholder}
                     />
                 </div>
 
                 <div>
-                    <label htmlFor='message' className='block text-text-primary mb-2'>
+                    <label htmlFor='message' className='block text-slate-800 dark:text-slate-200 mb-2'>
                         {t.form.message}
                     </label>
                     <textarea
@@ -240,7 +240,7 @@ export const ContactForm = ({ className = '' }: ContactFormProps) => {
                         onChange={handleChange}
                         required
                         rows={5}
-                        className='w-full p-3 bg-card-bg/50 dark:bg-[#1a1a1a] text-text-primary rounded-lg outline-none focus:ring-2 focus:ring-accent bg-[#723bf3]/5 dark:bg-[#723bf3]/10'
+                        className='w-full p-3 bg-card-bg/50 dark:bg-[#1a1a1a] text-slate-800 dark:text-slate-200 rounded-lg outline-none focus:ring-2 focus:ring-accent bg-[#723bf3]/5 dark:bg-[#723bf3]/10'
                         aria-label={t.form.message}
                         placeholder={t.form.messagePlaceholder}
                     />
