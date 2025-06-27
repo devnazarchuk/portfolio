@@ -21,6 +21,7 @@ const Experience = dynamic(() => import('./ui/experience').then(mod => mod.Exper
 const Projects = dynamic(() => import('./ui/projects').then(mod => mod.Projects));
 const Certificates = dynamic(() => import('./ui/certificates').then(mod => mod.Certificates));
 const Contact = dynamic(() => import('./ui/contact').then(mod => mod.Contact));
+const Loading = dynamic(() => import('./ui/loading').then(mod => mod.Loading));
 
 const messages = {
     en: enMessages,
@@ -41,6 +42,7 @@ export default function Home() {
     const contact = useRef<HTMLDivElement | null>(null);
     const { theme, toggleTheme } = useTheme();
     const { toggleLanguage } = useLanguage();
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -81,6 +83,15 @@ export default function Home() {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [isMobileMenuOpen]);
+
+    useEffect(() => {
+        // Simulate loading time
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 1500);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     const scrollToSection = (section: 'about' | 'skills' | 'experience' | 'projects' | 'certificates' | 'contact') => {
         const element = document.getElementById(section);
@@ -192,6 +203,10 @@ export default function Home() {
     );
 
     return (
+        <>
+            {isLoading ? (
+                <Loading />
+            ) : (
         <div className='max-w-7xl mx-auto px-4 flex max-lg:flex-col max-lg:px-10 max-[425px]:px-4 overflow-hidden' suppressHydrationWarning>
             <Cursor />
             
@@ -468,6 +483,8 @@ export default function Home() {
                 </div>
             </div>
         </div>
+    )}
+</>
     );
 }
 
