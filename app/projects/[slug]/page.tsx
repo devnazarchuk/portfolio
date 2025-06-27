@@ -67,6 +67,10 @@ export default async function ProjectPage({ params }: PageProps) {
         pappert: {
             github: 'https://github.com/devnazarchuk/pappert',
             demo: 'https://pappert.vercel.app'
+        },
+        banking: {
+            github: 'https://github.com/devnazarchuk/banking-app',
+            demo: 'https://banking-app.vercel.app'
         }
     };
 

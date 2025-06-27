@@ -3,12 +3,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FaReact, FaGitAlt, FaLinux, FaServer, FaShieldAlt, FaGlobe, FaAws } from 'react-icons/fa';
-import { SiTypescript, SiNextdotjs, SiTailwindcss, SiFramer, SiJavascript, SiHtml5, SiCss3, SiGit, SiVercel, SiEslint, SiPrettier, SiNodedotjs, SiExpress, SiPostgresql, SiPrisma, SiSanity, SiSass, SiFigma, SiWebpack, SiYarn, SiMongodb, SiExpo, SiFirebase, SiTurborepo, SiNpm, SiReactrouter, SiAxios, SiStripe, SiLinux, SiSqlite, SiJest, SiJira, SiDocker, SiGraphql, SiAriakit, SiI18Next, SiGooglesearchconsole, SiAwsorganizations } from 'react-icons/si';
+import { FaReact, FaGitAlt, FaLinux, FaShieldAlt, FaAws } from 'react-icons/fa';
+import { SiTypescript, SiNextdotjs, SiTailwindcss, SiFramer, SiJavascript, SiHtml5, SiCss3, SiGit, SiVercel, SiEslint, SiPrettier, SiNodedotjs, SiExpress, SiPostgresql, SiPrisma, SiSanity, SiSass, SiFigma, SiWebpack, SiYarn, SiMongodb, SiExpo, SiFirebase, SiTurborepo, SiNpm, SiReactrouter, SiAxios, SiStripe, SiSqlite, SiJest, SiJira, SiDocker, SiGraphql, SiGooglesearchconsole } from 'react-icons/si';
 import { TbBrandVscode } from 'react-icons/tb';
-import { BiServer, BiGlobe, BiWorld, BiSearch, BiAccessibility } from 'react-icons/bi';
+import { BiServer } from 'react-icons/bi';
 import { MdOutlineSecurity, MdOutlineTranslate, MdOutlineSpeed, MdOutlineAccessibility } from 'react-icons/md';
-import { GiServerRack, GiNetworkBars, GiWorld } from 'react-icons/gi';
 import { useLanguage } from '../context/LanguageContext';
 import enMessages from '../../messages/en.json';
 import deMessages from '../../messages/de.json';
