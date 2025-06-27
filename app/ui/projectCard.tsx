@@ -5,8 +5,8 @@ import { useLanguage } from '../context/LanguageContext';
 import enMessages from '../../messages/en.json';
 import deMessages from '../../messages/de.json';
 import { FaGithub, FaExternalLinkAlt, FaReact, FaGitAlt, FaSass, FaMobile, FaSearch, FaShoppingCart, FaHeart, FaDatabase } from 'react-icons/fa';
-import { SiTypescript, SiTailwindcss, SiNextdotjs, SiAxios, SiFramer, SiVercel, SiReactrouter } from 'react-icons/si';
-import { BiStore, BiCodeAlt, BiGlobe, BiMobileAlt, BiFilterAlt, BiLayer } from 'react-icons/bi';
+import { SiTypescript, SiTailwindcss, SiNextdotjs, SiAxios, SiFramer, SiVercel, SiReactrouter, SiStripe } from 'react-icons/si';
+import { BiStore, BiCodeAlt, BiGlobe, BiMobileAlt, BiFilterAlt, BiLayer, BiTrendingUp, BiBarChart } from 'react-icons/bi';
 import { MdOutlineSpeed, MdOutlineAccessibility, MdOutlineTranslate } from 'react-icons/md';
 
 const messages = {
@@ -70,11 +70,17 @@ const techIcons: Record<string, React.ReactNode> = {
     
     // Version Control & Deployment
     'Git': <FaGitAlt className="text-[#F05032]" />,
-    'Vercel': <SiVercel className="text-[#000000]" />
+    'Vercel': <SiVercel className="text-[#000000]" />,
+    
+    // New Icons
+    'Stripe': <SiStripe className="text-[#000000]" />,
+    'Core Web Vitals': <BiTrendingUp className="text-[#4CAF50]" />,
+    'Real-time Data': <BiBarChart className="text-[#4CAF50]" />,
+    'Analytics': <BiBarChart className="text-[#4CAF50]" />
 };
 
 interface ProjectCardProps {
-    itemKey: 'depity' | 'sneakers' | 'pappert';
+    itemKey: 'pappert' | 'sneakers' | 'depity' | 'banking';
     github: string;
     demo: string;
 }

@@ -3,9 +3,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FaReact, FaGitAlt } from 'react-icons/fa';
-import { SiTypescript, SiNextdotjs, SiTailwindcss, SiFramer, SiJavascript, SiHtml5, SiCss3, SiGit, SiVercel, SiEslint, SiPrettier, SiNodedotjs, SiExpress, SiPostgresql, SiPrisma, SiStrapi, SiSanity, SiSass, SiFigma, SiWebpack, SiYarn, SiMongodb, SiExpo, SiFirebase, SiTurborepo, SiNpm, SiReactrouter, SiAxios } from 'react-icons/si';
+import { FaReact, FaGitAlt, FaLinux, FaServer, FaShieldAlt, FaGlobe, FaAws } from 'react-icons/fa';
+import { SiTypescript, SiNextdotjs, SiTailwindcss, SiFramer, SiJavascript, SiHtml5, SiCss3, SiGit, SiVercel, SiEslint, SiPrettier, SiNodedotjs, SiExpress, SiPostgresql, SiPrisma, SiSanity, SiSass, SiFigma, SiWebpack, SiYarn, SiMongodb, SiExpo, SiFirebase, SiTurborepo, SiNpm, SiReactrouter, SiAxios, SiStripe, SiLinux, SiSqlite, SiJest, SiJira, SiDocker, SiGraphql, SiAriakit, SiI18Next, SiGooglesearchconsole, SiAwsorganizations } from 'react-icons/si';
 import { TbBrandVscode } from 'react-icons/tb';
+import { BiServer, BiGlobe, BiWorld, BiSearch, BiAccessibility } from 'react-icons/bi';
+import { MdOutlineSecurity, MdOutlineTranslate, MdOutlineSpeed, MdOutlineAccessibility } from 'react-icons/md';
+import { GiServerRack, GiNetworkBars, GiWorld } from 'react-icons/gi';
 import { useLanguage } from '../context/LanguageContext';
 import enMessages from '../../messages/en.json';
 import deMessages from '../../messages/de.json';
@@ -74,20 +77,20 @@ const stages = [
     },
     {
         key: "learning",
-        technologies: ["TypeScript", "Express", "REST API", "JWT", "PostgreSQL", "Prisma", "MongoDB", "Strapi", "Sanity", "React Native", "Expo", "Firebase", "Webpack", "Husky", "TurboRepo"],
+        technologies: ["Redux", "PostgreSQL", "MongoDB", "Express.js", "AWS", "GitLab CI/CD", "Testing", "JWT", "Stripe", "Advanced TypeScript"],
         icon: "🧪"
     }
 ];
 
 const mainTechnologies = [
-    "React",
-    "JavaScript",
+    "React.js",
     "Next.js",
+    "TypeScript",
+    "JavaScript",
     "Tailwind CSS",
     "Framer Motion",
-    "Node.js*",
-    "TypeScript*",
-    "VSCode",
+    "Git",
+    "Vercel",
 ];
 
 const techIcons: { [key: string]: React.ReactNode } = {
@@ -102,6 +105,7 @@ const techIcons: { [key: string]: React.ReactNode } = {
     ESLint: <SiEslint className="text-[#4B32C3]" />,
     "Framer Motion": <SiFramer className="text-[#0055FF]" />,
     React: <FaReact className="text-[#61DAFB]" />,
+    "React.js": <FaReact className="text-[#61DAFB]" />,
     npm: <SiNpm className="text-[#CB3837]" />,
     yarn: <SiYarn className="text-[#2C8EBB]" />,
     Zustand: <FaReact className="text-[#764ABC]" />,
@@ -109,21 +113,23 @@ const techIcons: { [key: string]: React.ReactNode } = {
     "Context API": <FaReact className="text-[#61DAFB]" />,
     "Custom Hooks": <FaReact className="text-[#61DAFB]" />,
     "Next.js": <SiNextdotjs className="text-black dark:text-white" />,
+    "Next.js (App Router)": <SiNextdotjs className="text-black dark:text-white" />,
     TypeScript: <SiTypescript className="text-[#3178C6]" />,
     "TypeScript*": <SiTypescript className="text-[#3178C6]" />,
-    i18n: <SiNodedotjs className="text-[#339933]" />,
+    i18n: <MdOutlineTranslate className="text-[#339933]" />,
     Vercel: <SiVercel className="text-black dark:text-white" />,
-    SEO: <SiNodedotjs className="text-[#339933]" />,
+    SEO: <SiGooglesearchconsole className="text-[#4285F4]" />,
     "Next Image": <SiNextdotjs className="text-black dark:text-white" />,
-    "Form Handling": <SiNodedotjs className="text-[#339933]" />,
-    "Radix UI": <SiNodedotjs className="text-[#339933]" />,
+    "Form Handling": <BiServer className="text-[#339933]" />,
+    "Radix UI": <SiNodedotjs className="text-[#161618]" />,
     Express: <SiExpress className="text-black dark:text-white" />,
-    "REST API": <SiNodedotjs className="text-[#339933]" />,
-    JWT: <SiNodedotjs className="text-[#339933]" />,
+    "Express.js": <SiExpress className="text-black dark:text-white" />,
+    "REST API": <BiServer className="text-[#339933]" />,
+    JWT: <MdOutlineSecurity className="text-[#D63AFF]" />,
     PostgreSQL: <SiPostgresql className="text-[#336791]" />,
     Prisma: <SiPrisma className="text-[#2D3748]" />,
     MongoDB: <SiMongodb className="text-[#47A248]" />,
-    Strapi: <SiStrapi className="text-[#2F2E8B]" />,
+    Stripe: <SiStripe className="text-[#2F2E8B]" />,
     Sanity: <SiSanity className="text-[#F03E2F]" />,
     "React Native": <FaReact className="text-[#61DAFB]" />,
     Expo: <SiExpo className="text-[#000020]" />,
@@ -132,8 +138,30 @@ const techIcons: { [key: string]: React.ReactNode } = {
     Husky: <SiGit className="text-black dark:text-white" />,
     TurboRepo: <SiTurborepo className="text-[#EF4444]" />,
     "Node.js*": <SiNodedotjs className="text-[#339933]" />,
+    "Node.js": <SiNodedotjs className="text-[#339933]" />,
     VSCode: <TbBrandVscode className="text-[#007ACC]" />,
-    Axios: <SiAxios className="text-[#5A29E4]" />
+    Axios: <SiAxios className="text-[#5A29E4]" />,
+    Docker: <SiDocker className="text-[#2496ED]" />,
+    AWS: <FaAws className="text-[#FF9900]" />,
+    "AWS (EC2, S3)": <FaAws className="text-[#FF9900]" />,
+    GraphQL: <SiGraphql className="text-[#E10098]" />,
+    Redux: <FaReact className="text-[#764ABC]" />,
+    "GitLab CI/CD": <FaGitAlt className="text-[#FCA326]" />,
+    "Testing (Jest, RTL)": <SiJest className="text-[#C21325]" />,
+    "Authentication with JWT": <MdOutlineSecurity className="text-[#D63AFF]" />,
+    "Advanced TypeScript Patterns": <SiTypescript className="text-[#3178C6]" />,
+    "SSR / SSG": <SiNextdotjs className="text-black dark:text-white" />,
+    "Code Splitting": <MdOutlineSpeed className="text-[#339933]" />,
+    "Lazy Loading": <MdOutlineSpeed className="text-[#339933]" />,
+    "Responsive Design": <SiCss3 className="text-[#1572B6]" />,
+    "Accessibility (ARIA/WCAG)": <MdOutlineAccessibility className="text-[#4285F4]" />,
+    "Internationalization (i18n)": <MdOutlineTranslate className="text-[#339933]" />,
+    "RESTful APIs": <BiServer className="text-[#339933]" />,
+    "Role-Based Access Control (RBAC)": <FaShieldAlt className="text-[#4285F4]" />,
+    SQLite: <SiSqlite className="text-[#003B57]" />,
+    "GitHub Actions (CI/CD)": <FaGitAlt className="text-[#2088FF]" />,
+    Kanban: <SiJira className="text-[#0052CC]" />,
+    "Linux CLI": <FaLinux className="text-[#FCC624]" />
 };
 
 interface TechCardProps {
@@ -190,56 +218,28 @@ export function SkillTimeline() {
             technologies: [
                 { name: 'HTML5', icon: SiHtml5, role: t.technologyRoles.frontend['HTML5'], color: '#E34F26' },
                 { name: 'CSS3', icon: SiCss3, role: t.technologyRoles.frontend['CSS3'], color: '#1572B6' },
-                { name: 'SASS / SCSS', icon: SiSass, role: t.technologyRoles.frontend['SASS / SCSS'], color: '#CC6699' },
-                { name: 'Tailwind CSS', icon: SiTailwindcss, role: t.technologyRoles.frontend['Tailwind CSS'], color: '#06B6D4' },
+                { name: 'Sass', icon: SiSass, role: t.technologyRoles.frontend['Sass'], color: '#CC6699' },
                 { name: 'JavaScript (ES6+)', icon: SiJavascript, role: t.technologyRoles.frontend['JavaScript (ES6+)'], color: '#F7DF1E' },
-                { name: 'TypeScript*', icon: SiTypescript, role: t.technologyRoles.frontend['TypeScript*'], color: '#3178C6' },
+                { name: 'TypeScript', icon: SiTypescript, role: t.technologyRoles.frontend['TypeScript'], color: '#3178C6' },
                 { name: 'React.js', icon: FaReact, role: t.technologyRoles.frontend['React.js'], color: '#61DAFB' },
-                { name: 'Next.js', icon: SiNextdotjs, role: t.technologyRoles.frontend['Next.js'], color: '#000000' },
+                { name: 'Next.js (App Router)', icon: SiNextdotjs, role: t.technologyRoles.frontend['Next.js (App Router)'], color: '#000000' },
+                { name: 'Tailwind CSS', icon: SiTailwindcss, role: t.technologyRoles.frontend['Tailwind CSS'], color: '#06B6D4' },
                 { name: 'Framer Motion', icon: SiFramer, role: t.technologyRoles.frontend['Framer Motion'], color: '#0055FF' },
-                { name: 'Zustand', icon: FaReact, role: t.technologyRoles.frontend['Zustand'], color: '#764ABC' },
-                { name: 'React Router', icon: FaReact, role: t.technologyRoles.frontend['React Router'], color: '#61DAFB' },
-                { name: 'Context API', icon: FaReact, role: t.technologyRoles.frontend['Context API'], color: '#61DAFB' },
-                { name: 'Next Image', icon: SiNextdotjs, role: t.technologyRoles.frontend['Next Image'], color: '#000000' },
-                { name: 'Radix UI', icon: SiNodedotjs, role: t.technologyRoles.frontend['Radix UI'], color: '#339933' },
-                { name: 'Headless UI', icon: SiNodedotjs, role: t.technologyRoles.frontend['Headless UI'], color: '#339933' },
-                { name: 'Figma', icon: SiFigma, role: t.technologyRoles.frontend['Figma'], color: '#F24E1E' },
             ]
         },
         {
-            title: t.categories.backend.title,
-            description: t.technologyDescriptions.backend,
+            title: t.categories.architecture.title,
+            description: t.technologyDescriptions.architecture,
             technologies: [
-                { name: 'Node.js*', icon: SiNodedotjs, role: t.technologyRoles.backend['Node.js*'], color: '#339933' },
-                { name: 'Express.js*', icon: SiExpress, role: t.technologyRoles.backend['Express.js*'], color: '#000000' },
-                { name: 'REST API*', icon: SiNodedotjs, role: t.technologyRoles.backend['REST API*'], color: '#339933' },
-                { name: 'JWT (Authentication)*', icon: SiNodedotjs, role: t.technologyRoles.backend['JWT (Authentication)*'], color: '#000000' },
-            ]
-        },
-        {
-            title: t.categories.databases.title,
-            description: t.technologyDescriptions.databases,
-            technologies: [
-                { name: 'PostgreSQL*', icon: SiPostgresql, role: t.technologyRoles.databases['PostgreSQL*'], color: '#336791' },
-                { name: 'MongoDB*', icon: SiMongodb, role: t.technologyRoles.databases['MongoDB*'], color: '#47A248' },
-                { name: 'Prisma*', icon: SiPrisma, role: t.technologyRoles.databases['Prisma*'], color: '#2D3748' },
-            ]
-        },
-        {
-            title: t.categories.cms.title,
-            description: t.technologyDescriptions.cms,
-            technologies: [
-                { name: 'Strapi*', icon: SiStrapi, role: t.technologyRoles.cms['Strapi*'], color: '#2F2E8B' },
-                { name: 'Sanity*', icon: SiSanity, role: t.technologyRoles.cms['Sanity*'], color: '#F03E2F' },
-            ]
-        },
-        {
-            title: t.categories.mobile.title,
-            description: t.technologyDescriptions.mobile,
-            technologies: [
-                { name: 'React Native*', icon: FaReact, role: t.technologyRoles.mobile['React Native*'], color: '#61DAFB' },
-                { name: 'Expo*', icon: SiExpo, role: t.technologyRoles.mobile['Expo*'], color: '#000020' },
-                { name: 'Firebase*', icon: SiFirebase, role: t.technologyRoles.mobile['Firebase*'], color: '#FFCA28' },
+                { name: 'SSR / SSG', icon: SiNextdotjs, role: t.technologyRoles.architecture['SSR / SSG'], color: '#000000' },
+                { name: 'Code Splitting', icon: MdOutlineSpeed, role: t.technologyRoles.architecture['Code Splitting'], color: '#339933' },
+                { name: 'Lazy Loading', icon: MdOutlineSpeed, role: t.technologyRoles.architecture['Lazy Loading'], color: '#339933' },
+                { name: 'Responsive Design', icon: SiCss3, role: t.technologyRoles.architecture['Responsive Design'], color: '#1572B6' },
+                { name: 'Accessibility (ARIA/WCAG)', icon: MdOutlineAccessibility, role: t.technologyRoles.architecture['Accessibility (ARIA/WCAG)'], color: '#4285F4' },
+                { name: 'SEO', icon: SiGooglesearchconsole, role: t.technologyRoles.architecture['SEO'], color: '#4285F4' },
+                { name: 'Internationalization (i18n)', icon: MdOutlineTranslate, role: t.technologyRoles.architecture['Internationalization (i18n)'], color: '#339933' },
+                { name: 'RESTful APIs', icon: BiServer, role: t.technologyRoles.architecture['RESTful APIs'], color: '#339933' },
+                { name: 'Role-Based Access Control (RBAC)', icon: FaShieldAlt, role: t.technologyRoles.architecture['Role-Based Access Control (RBAC)'], color: '#4285F4' },
             ]
         },
         {
@@ -247,12 +247,28 @@ export function SkillTimeline() {
             description: t.technologyDescriptions.tooling,
             technologies: [
                 { name: 'Git & GitHub', icon: FaGitAlt, role: t.technologyRoles.tooling['Git & GitHub'], color: '#F05032' },
+                { name: 'Zustand', icon: FaReact, role: t.technologyRoles.tooling['Zustand'], color: '#764ABC' },
+                { name: 'SQLite', icon: SiSqlite, role: t.technologyRoles.tooling['SQLite'], color: '#003B57' },
+                { name: 'Node.js', icon: SiNodedotjs, role: t.technologyRoles.tooling['Node.js'], color: '#339933' },
+                { name: 'GitHub Actions (CI/CD)', icon: FaGitAlt, role: t.technologyRoles.tooling['GitHub Actions (CI/CD)'], color: '#2088FF' },
+                { name: 'Kanban', icon: SiJira, role: t.technologyRoles.tooling['Kanban'], color: '#0052CC' },
+                { name: 'Linux CLI', icon: FaLinux, role: t.technologyRoles.tooling['Linux CLI'], color: '#FCC624' },
                 { name: 'Vercel', icon: SiVercel, role: t.technologyRoles.tooling['Vercel'], color: '#000000' },
-                { name: 'Webpack*', icon: SiWebpack, role: t.technologyRoles.tooling['Webpack*'], color: '#8DD6F9' },
-                { name: 'Prettier', icon: SiPrettier, role: t.technologyRoles.tooling['Prettier'], color: '#F7B93E' },
-                { name: 'ESLint', icon: SiEslint, role: t.technologyRoles.tooling['ESLint'], color: '#4B32C3' },
-                { name: 'TurboRepo*', icon: SiTurborepo, role: t.technologyRoles.tooling['TurboRepo*'], color: '#EF4444' },
-                { name: 'Husky*', icon: SiGit, role: t.technologyRoles.tooling['Husky*'], color: '#000000' },
+            ]
+        },
+        {
+            title: t.categories.learning.title,
+            description: t.technologyDescriptions.learning,
+            technologies: [
+                { name: 'Redux*', icon: FaReact, role: t.technologyRoles.learning['Redux*'], color: '#764ABC' },
+                { name: 'PostgreSQL*', icon: SiPostgresql, role: t.technologyRoles.learning['PostgreSQL*'], color: '#336791' },
+                { name: 'MongoDB*', icon: SiMongodb, role: t.technologyRoles.learning['MongoDB*'], color: '#47A248' },
+                { name: 'Express.js*', icon: SiExpress, role: t.technologyRoles.learning['Express.js*'], color: '#000000' },
+                { name: 'AWS (EC2, S3)*', icon: FaAws, role: t.technologyRoles.learning['AWS (EC2, S3)*'], color: '#FF9900' },
+                { name: 'GitLab CI/CD*', icon: FaGitAlt, role: t.technologyRoles.learning['GitLab CI/CD*'], color: '#FCA326' },
+                { name: 'Testing (Jest, RTL)*', icon: SiJest, role: t.technologyRoles.learning['Testing (Jest, RTL)*'], color: '#C21325' },
+                { name: 'Authentication with JWT*', icon: MdOutlineSecurity, role: t.technologyRoles.learning['Authentication with JWT*'], color: '#D63AFF' },
+                { name: 'Advanced TypeScript Patterns*', icon: SiTypescript, role: t.technologyRoles.learning['Advanced TypeScript Patterns*'], color: '#3178C6' },
             ]
         }
     ];

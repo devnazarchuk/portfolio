@@ -1,12 +1,13 @@
 {
     "title": "Artem Nazarchuk",
     "subtitle": "Frontend Developer",
-    "description": "Ich entwickle schnelle, skalierbare und zugängliche Webanwendungen mit React, Next.js und TypeScript. Leidenschaftlich für sauberen Code, nutzerzentriertes Design und kontinuierliches Lernen.",
+    "description": "Frontend-Entwickler mit fast 3 Jahren praktischer Erfahrung im Bau schneller, skalierbarer und zugänglicher Webanwendungen mit React.js, Next.js (App Router), TypeScript und Tailwind CSS.",
     "nav": {
         "about": "über mich",
         "skills": "fähigkeiten",
         "experience": "erfahrung",
         "projects": "projekte",
+        "certificates": "zertifikate",
         "contact": "kontakt"
     },
     "buttons": {
@@ -15,8 +16,8 @@
     },
     "about": {
         "title": "Über mich",
-        "paragraph1": "Seit 2022 bin ich intensiv in der Frontend-Entwicklung tätig, beginnend mit HTML- und CSS-Grundlagen bis hin zu modernen JavaScript-Frameworks. Ich genieße es, komplexe UI-Herausforderungen zu lösen und Performance sowie Zugänglichkeit zu optimieren.",
-        "paragraph2": "Aktuell bin ich Informatikstudent und freiberuflicher Entwickler und arbeite an realen Projekten, die Skalierbarkeit, Wiederverwendbarkeit und mehrsprachige Unterstützung betonen. Ich strebe danach, an wirkungsvollen Projekten mitzuarbeiten und mich als Entwickler weiterzuentwickeln.",
+        "paragraph1": "Frontend-Entwickler mit fast 3 Jahren praktischer Erfahrung im Bau schneller, skalierbarer und zugänglicher Webanwendungen mit React.js, Next.js (App Router), TypeScript und Tailwind CSS. Spezialisiert auf Internationalisierung (i18n), Performance-Optimierung (Core Web Vitals) und saubere Software-Architektur.",
+        "paragraph2": "Erfahren mit Agile-Workflows, CI/CD-Pipelines und produktionsreifen MVPs. Zielorientiert mit starkem Fokus auf Qualität und Benutzererfahrung. Aktuell als Freelancer und Indie-Entwickler tätig, kontinuierlich lernend und meine Fähigkeiten verbessernd.",
         "downloadResume": "Lebenslauf herunterladen"
     },
     "skills": {
@@ -81,107 +82,89 @@
                 "title": "Aktuell im Lernen",
                 "date": "Apr 2024 – Gegenwart",
                 "technologies": {
-                    "TypeScript": "TypeScript",
-                    "Express": "Express",
-                    "REST API": "REST API",
-                    "JWT": "JWT",
+                    "Redux": "Redux",
                     "PostgreSQL": "PostgreSQL",
-                    "Prisma": "Prisma",
                     "MongoDB": "MongoDB",
-                    "Strapi": "Strapi",
-                    "Sanity": "Sanity",
-                    "React Native": "React Native",
-                    "Expo": "Expo",
-                    "Firebase": "Firebase",
-                    "Webpack": "Webpack",
-                    "Husky": "Husky",
-                    "TurboRepo": "TurboRepo"
+                    "Express.js": "Express.js",
+                    "AWS (EC2, S3)": "AWS (EC2, S3)",
+                    "GitLab CI/CD": "GitLab CI/CD",
+                    "Testing (Jest, RTL)": "Testing (Jest, RTL)",
+                    "Authentication with JWT": "Authentication with JWT",
+                    "Stripe": "Stripe",
+                    "Advanced TypeScript Patterns": "Advanced TypeScript Patterns"
                 }
             }
         },
         "categories": {
             "frontend": {
-                "title": "Frontend",
+                "title": "Sprachen & Frameworks",
                 "description": "Kern-Frontend-Technologien und Frameworks"
             },
-            "backend": {
-                "title": "Backend & APIs",
-                "description": "Server-seitige und API-Entwicklung"
-            },
-            "databases": {
-                "title": "Datenbanken & ORM",
-                "description": "Datenspeicherung und -verwaltung"
-            },
-            "cms": {
-                "title": "CMS & Content",
-                "description": "Content-Management-Systeme"
-            },
-            "mobile": {
-                "title": "Mobile & Cross-Platform",
-                "description": "Mobile und plattformübergreifende Entwicklung"
+            "architecture": {
+                "title": "Architektur & Best Practices",
+                "description": "Software-Architektur-Patterns und Entwicklungs-Best-Practices"
             },
             "tooling": {
-                "title": "Tools & DevOps",
-                "description": "Entwicklungstools und -praktiken"
+                "title": "Tools & Workflows",
+                "description": "Entwicklungstools und Workflow-Praktiken"
+            },
+            "learning": {
+                "title": "Aktuell im Lernen",
+                "description": "Technologien und Fähigkeiten, die derzeit entwickelt werden"
             }
         },
-        "learningNote": "* Mit einem Sternchen markierte Technologien werden derzeit im Rahmen meiner Full-Stack-Entwicklungsroadmap gelernt oder verbessert.",
+        "learningNote": "* Mit einem Sternchen markierte Technologien werden derzeit im Rahmen meiner Entwicklungs-Roadmap gelernt oder verbessert.",
         "technologyRoles": {
             "frontend": {
                 "HTML5": "Struktur, Semantik",
                 "CSS3": "Styling, Animationen",
-                "SASS / SCSS": "CSS-Präprozessor",
-                "Tailwind CSS": "Utility-First CSS",
+                "Sass": "CSS-Präprozessor",
                 "JavaScript (ES6+)": "Moderne JS-Funktionen",
-                "TypeScript*": "Typsicherheit",
+                "TypeScript": "Typsicherheit",
                 "React.js": "Frontend-Bibliothek",
-                "Next.js": "React-Framework",
-                "Framer Motion": "Animationen",
-                "Zustand": "State Management",
-                "React Router": "Routing",
-                "Context API": "State Management",
-                "Next Image": "Bildoptimierung",
-                "Radix UI": "UI-Komponenten",
-                "Headless UI": "UI-Komponenten",
-                "Figma": "UI/UX-Design"
+                "Next.js (App Router)": "React-Framework",
+                "Tailwind CSS": "Utility-First CSS",
+                "Framer Motion": "Animationen"
             },
-            "backend": {
-                "Node.js*": "Laufzeitumgebung",
-                "Express.js*": "Web-Framework",
-                "REST API*": "API-Entwicklung",
-                "JWT (Authentication)*": "Sicherheit"
-            },
-            "databases": {
-                "PostgreSQL*": "Datenbank",
-                "MongoDB*": "NoSQL-Datenbank",
-                "Prisma*": "ORM"
-            },
-            "cms": {
-                "Strapi*": "Headless CMS",
-                "Sanity*": "Content-Plattform"
-            },
-            "mobile": {
-                "React Native*": "Mobile-Framework",
-                "Expo*": "Entwicklungsplattform",
-                "Firebase*": "Backend-Dienste"
+            "architecture": {
+                "SSR / SSG": "Server-Side Rendering",
+                "Code Splitting": "Performance-Optimierung",
+                "Lazy Loading": "Performance-Optimierung",
+                "Responsive Design": "Mobile-First Design",
+                "Accessibility (ARIA/WCAG)": "Web-Barrierefreiheit",
+                "SEO": "Suchmaschinenoptimierung",
+                "Internationalization (i18n)": "Mehrsprachige Unterstützung",
+                "RESTful APIs": "API-Entwicklung",
+                "Role-Based Access Control (RBAC)": "Sicherheit & Autorisierung"
             },
             "tooling": {
                 "Git & GitHub": "Versionskontrolle",
-                "Vercel": "Deployment",
-                "Webpack*": "Modul-Bundler",
-                "Prettier": "Code-Formatierung",
-                "ESLint": "Code-Qualität",
-                "TurboRepo*": "Monorepo-Tool",
-                "Husky*": "Git-Hooks"
+                "Zustand": "State Management",
+                "SQLite": "Datenbank",
+                "Node.js": "Laufzeitumgebung",
+                "GitHub Actions (CI/CD)": "Kontinuierliche Integration",
+                "Kanban": "Projektmanagement",
+                "Linux CLI": "Kommandozeile",
+                "Vercel": "Deployment"
+            },
+            "learning": {
+                "Redux*": "State Management",
+                "PostgreSQL*": "Datenbank",
+                "MongoDB*": "NoSQL-Datenbank",
+                "Express.js*": "Web-Framework",
+                "AWS (EC2, S3)*": "Cloud-Dienste",
+                "GitLab CI/CD*": "Kontinuierliche Integration",
+                "Testing (Jest, RTL)*": "Testing-Framework",
+                "Authentication with JWT*": "Sicherheit",
+                "Stripe*": "Zahlungsabwicklung",
+                "Advanced TypeScript Patterns*": "Typsicherheit"
             }
         },
         "technologyDescriptions": {
             "frontend": "Kern-Frontend-Technologien und Frameworks für moderne Webanwendungen",
-            "backend": "Server-seitige Entwicklung und API-Integration",
-            "databases": "Datenbanken und Objekt-Relationales Mapping",
-            "cms": "Content-Management-Systeme für dynamische Inhalte",
-            "mobile": "Mobile und plattformübergreifende Entwicklung",
-            "tooling": "Entwicklungstools und DevOps-Praktiken"
+            "architecture": "Software-Architektur-Patterns und Entwicklungs-Best-Practices",
+            "tooling": "Entwicklungstools und Workflow-Praktiken",
+            "learning": "Technologien und Fähigkeiten, die derzeit entwickelt werden"
         }
     },
     "experience": {
@@ -189,7 +172,7 @@
         "items": {
             "depity": {
                 "title": "Frontend Developer Intern",
-                "company": "Depity — Personal MVP / Simulierte Ausbildung",
+                "company": "Depity — Personal MVP / Simulierte Praktika",
                 "period": "2022 - 2023",
                 "description": [
                     "Entwicklung und Deployment einer vollständigen MVP HR-Plattform für Onboarding und rollenbasierte Zugangskontrolle",
@@ -223,39 +206,73 @@
         "viewProject": "Zeigen Live",
         "viewCode": "GitHub",
         "items": {
+            "pappert": {
+                "title": "🍞 Pappert Bakery Website — Mehrsprachige, ARIA-konforme Website",
+                "description": "Mehrsprachige, ARIA-konforme Website mit rollenbasierter Navigation, Core Web Vitals-Optimierung (TTI, CLS) und animierten Kategorie-Slidern (Framer Motion).",
+                "tech": "Next.js • Tailwind CSS • Framer Motion • next-intl • SEO • ARIA • Core Web Vitals",
+                "achievements": [
+                    "Mehrsprachige Unterstützung mit rollenbasierter Navigation",
+                    "ARIA-konforme Barrierefreiheitsstandards",
+                    "Core Web Vitals-Optimierung (TTI, CLS)",
+                    "Animierte Kategorie-Slider mit Framer Motion",
+                    "WCAG-konforme Barrierefreiheit und SEO-Markup",
+                    "Performance-Optimierung und responsives Design"
+                ],
+                "note": "🚀 Produktionsreif mit Core Web Vitals-Optimierung."
+            },
+            "sneakers": {
+                "title": "👟 Sneaker Store — E-Commerce-Plattform",
+                "description": "E-Commerce-Plattform mit Filterung, Warenkorb-Funktionalität und Stripe-Zahlungen.",
+                "tech": "ReactJS • React Router • SCSS • Axios • Context API • Stripe",
+                "achievements": [
+                    "Erweiterte Filter- und Suchfunktionalität",
+                    "Warenkorb mit State Management",
+                    "Stripe-Zahlungsabwicklung",
+                    "Responsives Design & Produktverwaltung",
+                    "Benutzerauthentifizierung und Bestellverfolgung",
+                    "Core Web Vitals Optimierung",
+                    "Real-time Daten und Analysen"
+                ]
+            },
             "depity": {
-                "title": "📦 Depity — Team Onboarding & Task Management",
-                "description": "Eine Task-Management-Plattform für Teams. Enthält Onboarding-Prozesse, Aufgabenverfolgung, Dateiverwaltung und Produktivitätsanalysen.",
+                "title": "📦 Depity Platform — Aufgaben- und Rollenverwaltung",
+                "description": "Aufgaben- und Rollenverwaltungsplattform mit Zustand State Management und Tailwind CSS.",
                 "tech": "React • Zustand • Tailwind CSS • Git • Responsive UI",
                 "achievements": [
                     "Benutzerdefiniertes Dashboard mit Drag-and-Drop-Unterstützung",
                     "Globaler State über Zustand",
                     "Mobile-First responsives Design",
-                    "Sauberes und intuitives UX mit Barrierefreiheit (ARIA)"
+                    "Sauberes und intuitives UX mit Barrierefreiheit (ARIA)",
+                    "Rollenbasierte Zugangskontrolle (RBAC)",
+                    "Aufgabenverwaltung und Team-Zusammenarbeit"
                 ]
             },
-            "sneakers": {
-                "title": "👟 React Sneakers — E-Commerce Store",
-                "description": "Ein interaktiver Sneaker-Store mit Routing, Suche, Warenkorb, Wunschliste und Produktfilterung.",
-                "tech": "ReactJS • React Router • SCSS • Axios • Context API • Skeleton UI",
+            "banking": {
+                "title": "🏦 Banking App — SaaS-Lösung (in Entwicklung)",
+                "description": "SaaS-Lösung mit Echtzeitdaten, Analysen und Transaktionen.",
+                "tech": "Next.js • TypeScript • Tailwind CSS • Echtzeitdaten • Analysen",
                 "achievements": [
-                    "Globaler State über Context API",
-                    "Axios für REST API-Kommunikation",
-                    "Skeleton Loading und Custom Hooks",
-                    "Responsives Design & Filtersystem"
-                ]
-            },
-            "pappert": {
-                "title": "🍞 Pappert Bakery Website — Modernes Redesign",
-                "description": "Ein vollständig responsives Redesign einer echten Bäckerei-Website mit rollenbasierter Inhaltsdarstellung (Kunde / Mitarbeiter) und dynamischer Architektur.",
-                "tech": "Next.js • Tailwind CSS • Framer Motion • next-intl • SEO • ARIA",
-                "achievements": [
-                    "Animiertes UI mit Kategorie-Slider",
-                    "i18n-Unterstützung und Light/Dark Theme",
-                    "Optimierte Performance (Code-Splitting, Lazy Loading, Bildoptimierung)",
-                    "WCAG-konforme Barrierefreiheit und SEO-Markup"
+                    "Echtzeitdatenvisualisierung und Analysen",
+                    "Transaktionsverwaltungssystem",
+                    "Erweitertes Dashboard mit Charts und Metriken",
+                    "Sichere Authentifizierung und Autorisierung",
+                    "Responsives Design für alle Geräte",
+                    "Performance-Optimierung und Skalierbarkeit"
                 ],
-                "note": "🧪 Vollständig eigenständig von Grund auf entwickelt."
+                "note": "🔄 Derzeit in Entwicklung."
+            }
+        }
+    },
+    "certificates": {
+        "title": "Zertifikate",
+        "subtitle": "Professionelle Zertifizierungen und Erfolge, die meine Fähigkeiten und Kenntnisse validieren",
+        "items": {
+            "udemy": {
+                "title": "The Complete Full-Stack Web Development Bootcamp",
+                "issuer": "Udemy (Dr. Angela Yu)",
+                "date": "Zertifikat verliehen am 19.06.2025",
+                "description": "Umfassender Full-Stack-Kurs für moderne Webentwicklung: HTML, CSS, JavaScript, Node.js, Express.js, MongoDB, APIs, Authentifizierung und Deployment.",
+                "link": "https://udemy.com/certificate/UC-a3cdda78-980e-45f6-9f39-633472f34274/"
             }
         }
     },

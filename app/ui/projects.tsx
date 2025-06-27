@@ -11,7 +11,7 @@ const messages = {
     de: deMessages
 };
 
-type ProjectKey = 'depity' | 'sneakers' | 'pappert';
+type ProjectKey = 'pappert' | 'sneakers' | 'depity' | 'banking';
 
 interface ProjectData {
     key: ProjectKey;
@@ -32,19 +32,24 @@ const blockAnimation = {
 
 const projectsData: ProjectData[] = [
     { 
+        key: 'pappert', 
+        github: 'https://github.com/devnazarchuk/pappert', 
+        demo: 'https://pappert.vercel.app/' 
+    },
+    { 
+        key: 'sneakers', 
+        github: 'https://github.com/devnazarchuk/sneakers-shop', 
+        demo: 'https://rsneakers.vercel.app/' 
+    },
+    { 
         key: 'depity', 
         github: 'https://github.com/devnazarchuk/depity', 
         demo: 'https://depity.vercel.app/' 
     },
     { 
-        key: 'sneakers', 
-        github: 'https://github.com/devnazarchuk/sneakers-shop', 
-        demo: 'https://reactsneakerss.vercel.app/' 
-    },
-    { 
-        key: 'pappert', 
-        github: 'https://github.com/devnazarchuk/pappert', 
-        demo: 'https://pappert.vercel.app/' 
+        key: 'banking', 
+        github: 'https://github.com/devnazarchuk?tab=repositories', 
+        demo: 'https://github.com/devnazarchuk?tab=repositories' 
     }
 ];
 
