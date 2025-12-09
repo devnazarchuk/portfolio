@@ -62,8 +62,9 @@ export function Header() {
                                 href="/artem_nazarchuk_resume_eng.pdf"
                                 download
                                 className="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium tracking-tight text-white hover:bg-white/5 transition-all"
+                                aria-label="Download Resume (English)"
                             >
-                                <Download className="w-4 h-4" />
+                                <Download className="w-4 h-4" aria-hidden="true" />
                                 <span>Resume</span>
                             </Link>
 
@@ -74,9 +75,9 @@ export function Header() {
                             <button
                                 onClick={() => setShowResumeDropdown(!showResumeDropdown)}
                                 className="inline-flex items-center justify-center px-2 py-1.5 hover:bg-white/5 transition-all"
-                                aria-label="Choose resume language"
+                                aria-label="Toggle resume languages"
                             >
-                                <ChevronDown className={`w-3.5 h-3.5 text-white transition-transform duration-300 ${showResumeDropdown ? 'rotate-180' : ''}`} />
+                                <ChevronDown className={`w-3.5 h-3.5 text-white transition-transform duration-300 ${showResumeDropdown ? 'rotate-180' : ''}`} aria-hidden="true" />
                             </button>
                         </div>
 
@@ -109,8 +110,9 @@ export function Header() {
                         type="button"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         className="md:hidden inline-flex items-center justify-center rounded-full p-2 border border-white/10 bg-white/5 hover:bg-white/10"
+                        aria-label="Toggle menu"
                     >
-                        {isMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+                        {isMenuOpen ? <X className="w-4 h-4" aria-hidden="true" /> : <Menu className="w-4 h-4" aria-hidden="true" />}
                     </button>
                 </div>
             </nav>
@@ -159,7 +161,7 @@ export function Header() {
                                     onClick={() => setIsMenuOpen(false)}
                                     className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-neutral-900 hover:bg-black/5 transition-all"
                                 >
-                                    <Download className="w-4 h-4" />
+                                    <Download className="w-4 h-4" aria-hidden="true" />
                                     <span>Download Resume</span>
                                 </Link>
 
@@ -170,9 +172,9 @@ export function Header() {
                                 <button
                                     onClick={() => setShowResumeDropdown(!showResumeDropdown)}
                                     className="inline-flex items-center justify-center px-3 py-2.5 hover:bg-black/5 text-neutral-900 transition-all"
-                                    aria-label="Choose resume language"
+                                    aria-label="Toggle resume languages"
                                 >
-                                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showResumeDropdown ? 'rotate-180' : ''}`} />
+                                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showResumeDropdown ? 'rotate-180' : ''}`} aria-hidden="true" />
                                 </button>
                             </div>
 
@@ -202,7 +204,7 @@ export function Header() {
                                         className="flex items-center justify-between px-4 py-3 hover:bg-black/5 transition-colors text-neutral-900"
                                     >
                                         <span className="text-sm font-medium">Deutsch 🇩🇪</span>
-                                        <Download className="w-3.5 h-3.5" />
+                                        <Download className="w-3.5 h-3.5" aria-hidden="true" />
                                     </Link>
                                 </div>
                             )}

@@ -54,6 +54,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        {/* Preconnect to Google Fonts for faster font loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Preconnect to Spline for faster 3D animation loading */}
+        <link rel="preconnect" href="https://my.spline.design" />
+
+        {/* DNS prefetch as fallback for broader browser support */}
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="dns-prefetch" href="https://my.spline.design" />
+      </head>
       <body className={`${inter.variable} ${bricolage.variable} ${merriweather.variable} ${instrument.variable} ${playfair.variable} font-sans antialiased bg-black text-white`}>
         {children}
       </body>

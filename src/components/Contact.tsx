@@ -84,7 +84,7 @@ export function Contact() {
                                     href="mailto:devnazarchuk@gmail.com"
                                     className="inline-flex items-start gap-2 text-base sm:text-lg lg:text-xl font-medium group/link"
                                 >
-                                    <Mail className="w-4 h-4 sm:w-5 sm:h-5 mt-1 text-purple-400 flex-shrink-0" />
+                                    <Mail className="w-4 h-4 sm:w-5 sm:h-5 mt-1 text-purple-400 flex-shrink-0" aria-hidden="true" />
                                     <span className="break-all group-hover/link:text-purple-400 transition-colors">
                                         devnazarchuk@gmail.com
                                     </span>
@@ -98,9 +98,9 @@ export function Contact() {
                                     onClick={() => setShowBookingModal(true)}
                                     className="inline-flex items-center gap-2 px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-medium text-sm transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
                                 >
-                                    <Calendar className="w-4 h-4" />
+                                    <Calendar className="w-4 h-4" aria-hidden="true" />
                                     <span>Book a call</span>
-                                    <ArrowUpRight className="w-4 h-4" />
+                                    <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                                 </button>
                             </div>
 
@@ -119,7 +119,7 @@ export function Contact() {
                                                 className="group/social relative flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-white/5 border border-white/10 hover:border-purple-400/50 transition-all duration-300 hover:scale-110"
                                                 aria-label={social.name}
                                             >
-                                                <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-white/70 group-hover/social:text-purple-400 transition-colors relative z-10" />
+                                                <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-white/70 group-hover/social:text-purple-400 transition-colors relative z-10" aria-hidden="true" />
                                                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-xl opacity-0 group-hover/social:opacity-100 transition-opacity duration-300"></div>
                                             </Link>
                                         );
@@ -139,7 +139,7 @@ export function Contact() {
                                         aria-label="Scroll to top"
                                     >
                                         <span>Back to top</span>
-                                        <ArrowUpRight className="w-4 h-4 rotate-315 group-hover:-translate-y-1 transition-transform duration-300" />
+                                        <ArrowUpRight className="w-4 h-4 rotate-315 group-hover:-translate-y-1 transition-transform duration-300" aria-hidden="true" />
                                     </button>
 
                                     {/* Resume Download with Split Button */}
@@ -151,7 +151,7 @@ export function Contact() {
                                                 download
                                                 className="flex-1 sm:flex-initial inline-flex items-center justify-center sm:justify-start gap-2 px-5 py-2.5 text-sm font-medium text-white/60 hover:text-white hover:bg-white/5 transition-all duration-300"
                                             >
-                                                <Download className="w-4 h-4" />
+                                                <Download className="w-4 h-4" aria-hidden="true" />
                                                 <span>Download Resume</span>
                                             </Link>
 
@@ -162,9 +162,9 @@ export function Contact() {
                                             <button
                                                 onClick={() => setShowResumeDropdown(!showResumeDropdown)}
                                                 className="inline-flex items-center justify-center px-3 py-2.5 hover:bg-white/5 text-white/60 hover:text-white transition-all duration-300"
-                                                aria-label="Choose resume language"
+                                                aria-label="Toggle resume languages"
                                             >
-                                                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showResumeDropdown ? 'rotate-180' : ''}`} />
+                                                <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${showResumeDropdown ? 'rotate-180' : ''}`} aria-hidden="true" />
                                             </button>
                                         </div>
 
@@ -240,7 +240,7 @@ export function Contact() {
                                 className="p-2 rounded-full hover:bg-white/10 transition-colors text-white/70 hover:text-white"
                                 aria-label="Close modal"
                             >
-                                <X className="w-5 h-5" />
+                                <X className="w-5 h-5" aria-hidden="true" />
                             </button>
                         </div>
 

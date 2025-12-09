@@ -12,7 +12,7 @@ export function Stack() {
                 <div className="bg-white/5 border-white/10 border rounded-2xl p-4">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
-                            <Sparkles className="w-4 h-4 text-white/80" />
+                            <Sparkles className="w-4 h-4 text-white/80" aria-hidden="true" />
                             <h3 className="text-xl font-semibold tracking-tight text-white">
                                 Tech Stack
                             </h3>
@@ -22,7 +22,7 @@ export function Stack() {
                             className="inline-flex items-center gap-2 text-sm tracking-tight text-white/70 hover:text-white"
                         >
                             <span>View all</span>
-                            <ArrowUpRight className="w-4 h-4" />
+                            <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                         </Link>
                     </div>
 
@@ -82,7 +82,7 @@ export function Stack() {
                 <div className="bg-white/5 border-white/10 border rounded-2xl p-4">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
-                            <Calendar className="w-4 h-4 text-white/80" />
+                            <Calendar className="w-4 h-4 text-white/80" aria-hidden="true" />
                             <h3 className="text-xl font-semibold tracking-tight text-white">
                                 Timeline
                             </h3>
@@ -92,7 +92,7 @@ export function Stack() {
                             className="inline-flex items-center gap-2 text-sm tracking-tight text-white/70 hover:text-white"
                         >
                             <span>View all</span>
-                            <ArrowUpRight className="w-4 h-4" />
+                            <ArrowUpRight className="w-4 h-4" aria-hidden="true" />
                         </Link>
                     </div>
                     <ol className="mt-3">

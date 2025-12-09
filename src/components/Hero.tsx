@@ -41,21 +41,21 @@ export async function Hero() {
                             href="#work"
                             className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium tracking-tight text-neutral-900 bg-white hover:bg-white/90 border border-white/10"
                         >
-                            <ArrowRight className="w-4 h-4" />
+                            <ArrowRight className="w-4 h-4" aria-hidden="true" />
                             <span>View Work</span>
                         </Link>
                         <Link
                             href="mailto:devnazarchuk@gmail.com"
                             className="inline-flex items-center justify-center gap-2 hover:bg-white/15 text-sm font-medium text-white tracking-tight bg-white/10 border-white/10 border rounded-full pt-3 pr-5 pb-3 pl-5 shadow-sm backdrop-blur"
                         >
-                            <Mail className="w-4 h-4" />
+                            <Mail className="w-4 h-4" aria-hidden="true" />
                             <span>devnazarchuk@gmail.com</span>
                         </Link>
                     </div>
 
                     <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div className="flex items-start gap-3 border-t border-white/10 pt-4">
-                            <MapPin className="w-[18px] h-[18px] text-white/50 mt-0.5" />
+                            <MapPin className="w-[18px] h-[18px] text-white/50 mt-0.5" aria-hidden="true" />
                             <div>
                                 <p className="text-sm font-medium tracking-tight text-white">
                                     Based in Germany
@@ -66,7 +66,7 @@ export async function Hero() {
                             </div>
                         </div>
                         <div className="flex items-start gap-3 border-t border-white/10 pt-4">
-                            <Cpu className="w-[18px] h-[18px] text-white/50 mt-0.5" />
+                            <Cpu className="w-[18px] h-[18px] text-white/50 mt-0.5" aria-hidden="true" />
                             <div>
                                 <p className="text-sm font-medium tracking-tight text-white">
                                     AI Systems + Frontend
@@ -77,7 +77,7 @@ export async function Hero() {
                             </div>
                         </div>
                         <div className="flex items-start gap-3 border-t border-white/10 pt-4">
-                            <Check className="w-[18px] h-[18px] text-white/50 mt-0.5" />
+                            <Check className="w-[18px] h-[18px] text-white/50 mt-0.5" aria-hidden="true" />
                             <div>
                                 <p className="text-sm font-medium tracking-tight text-white">
                                     Currently available
@@ -100,6 +100,7 @@ export async function Hero() {
                             className="object-cover grayscale"
                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             priority
+                            fetchPriority="high"
                         />
                         {/* Gradient Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>

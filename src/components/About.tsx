@@ -12,6 +12,7 @@ export function About() {
                         alt="About Image"
                         fill
                         className="object-cover"
+                        loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-transparent"></div>
                 </div>
@@ -59,7 +60,7 @@ export function About() {
                             href="#contact"
                             className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium tracking-tight text-neutral-900 bg-white hover:bg-white/90 border border-white/10 transition-colors"
                         >
-                            <Handshake className="w-4 h-4" />
+                            <Handshake className="w-4 h-4" aria-hidden="true" />
                             <span>Let's collaborate</span>
                         </Link>
                     </div>
