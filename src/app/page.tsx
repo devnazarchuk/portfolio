@@ -10,7 +10,7 @@ import { LazySplineBackground } from "@/components/LazySplineBackground";
 export default function Home() {
   return (
     <div className="bg-black min-h-screen text-white selection:bg-white selection:text-neutral-900">
-      <div className="relative bg-transparent !important">
+      <div className="relative bg-transparent min-h-[120vh] !important">
         <LazySplineBackground />
         <Header />
         <Hero />
